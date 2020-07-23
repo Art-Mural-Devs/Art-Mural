@@ -1,0 +1,12 @@
+
+
+#wrapper {
+    border: solid black;
+    background-color: lightgray;
+}
+
+img[alt="My Picture"] {
+    float: left;
+    width: 22rem;
+    padding-right: 1rem;
+}
