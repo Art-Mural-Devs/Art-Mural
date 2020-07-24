@@ -1,4 +1,6 @@
-
+body {
+    background-color: rgba(117, 190, 218, 0.5);
+}
 
 #wrapper {
     border: solid black;
