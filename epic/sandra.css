@@ -1,0 +1,15 @@
+body {
+    background-color: snow;
+}
+
+#wrapper {
+    border: solid black;
+    background-color: lightcyan;
+    padding: 1rem;
+}
+
+img[alt="My Picture"] {
+    float: left;
+    width: 22rem;
+    padding-right: 1rem;
+}
