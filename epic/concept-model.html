@@ -34,15 +34,6 @@
         <li>muralImage</li>
     </ul>
 
-    <h2>Main Map</h2>
-    <p>This is the entity for the large overview map with its page.</p>
-    <p>One to Many - One main map will have many drop points</p>
-    <ul>
-        <li>mainMapId (primary key)</li>
-        <li>mainMapDropPointId (foreign key 1)</li>
-        <li>mainMapMuralId (foreign key 2)</li>
-        <li>mainMapContent</li>
-    </ul>
 
     <h2>Route Maps</h2>
     <p>This is the entity for the routes page where pre-mapped routes are created based on walk time and proximity between murals.
@@ -55,15 +46,6 @@
         <li>routeMapContent</li>
     </ul>
 
-    <h2>Drop Points</h2>
-    <p>This is the entity for the points on the map indicating the location of a mural.</p>
-    <p>Many to Many - While there will be one drop point per mural, there will be many drop points on many maps.</p>
-    <ul>
-        <li>dropPointId (primary key)</li>
-        <li>dropPointMuralId (foreign key 1)</li>
-        <li>dropPointProfileId (foreign key 2)</li>
-        <li>dropPointLocation</li>
-    </ul>
 
     <h2>Like</h2>
     <p>This is the entity for the likes, which will be available on every mural.</p>
