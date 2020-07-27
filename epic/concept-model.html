@@ -10,8 +10,8 @@
     <h1>Entities and Attributes</h1>
 
     <h2>Profile</h2>
-    <p>Users will be able to create a profile that allows them to like and upload new murals.</p>
-    <p>One to one - one user can create one profile</p>
+    <p>Users will be able to create a profile that allows them to like and upload murals.</p>
+    <p>One to one - One user can create one profile.</p>
     <ul>
         <li>profileId (primary key)</li>
         <li>profileActivationToken</li>
@@ -24,11 +24,11 @@
 
     <h2>Mural</h2>
     <p>Murals will be submitted by users as well as by us developers.</p>
-    <p>Many to Many - many murals can be submitted by many users</p>
+    <p>Many to Many - Many murals can be submitted by many users</p>
     <ul>
         <li>muralId (primary key)</li>
-        <li>muralLikeProfileId (foreign key)</li>
-        <li>muralProfileId (foreign key)</li>
+        <li>muralLikeProfileId (foreign key 1)</li>
+        <li>muralProfileId (foreign key 2)</li>
         <li>muralContent</li>
         <li>muralDate</li>
         <li>muralImage</li>
@@ -36,31 +36,32 @@
 
     <h2>Main Map</h2>
     <p>This is the entity for the large overview map with its page.</p>
-    <p>One to Many - one main map will have many drop points</p>
+    <p>One to Many - One main map will have many drop points</p>
     <ul>
         <li>mainMapId (primary key)</li>
-        <li>mainMapDropPointId (foreign key)</li>
-        <li>mainMapMuralId (foreign key)</li>
+        <li>mainMapDropPointId (foreign key 1)</li>
+        <li>mainMapMuralId (foreign key 2)</li>
         <li>mainMapContent</li>
     </ul>
 
     <h2>Route Maps</h2>
-    <p>This is the entity for the routes page where pre-mapped routes are available based on walk time.</p>
-    <p>Many to Many - there will be many routes with many drop points</p>
+    <p>This is the entity for the routes page where pre-mapped routes are created based on walk time and proximity between murals.
+    Routes are designed to ease the user's burden of planning and allows them to choose a predefined route to explore.</p>
+    <p>Many to Many - There will be many routes with many drop points.</p>
     <ul>
         <li>routeId (primary key)</li>
-        <li>routeDropPointId (foreign key)</li>
-        <li>routeMuralId (foreign key)</li>
+        <li>routeDropPointId (foreign key 1)</li>
+        <li>routeMuralId (foreign key 2)</li>
         <li>routeMapContent</li>
     </ul>
 
     <h2>Drop Points</h2>
     <p>This is the entity for the points on the map indicating the location of a mural.</p>
-    <p>One to Many - One drop point per mural, with many drop points per map.</p>
+    <p>Many to Many - While there will be one drop point per mural, there will be many drop points on many maps.</p>
     <ul>
         <li>dropPointId (primary key)</li>
-        <li>dropPointMuralId (foreign key)</li>
-        <li>dropPointProfileId (foreign key)</li>
+        <li>dropPointMuralId (foreign key 1)</li>
+        <li>dropPointProfileId (foreign key 2)</li>
         <li>dropPointLocation</li>
     </ul>
 
@@ -68,8 +69,8 @@
     <p>This is the entity for the likes, which will be available on every mural.</p>
     <p>Many to Many - There can be many likes on many murals</p>
     <ul>
-        <li>likeProfileID (foreign key)</li>
-        <li>likeMuralId (foreign key)</li>
+        <li>likeProfileID (foreign key 1)</li>
+        <li>likeMuralId (foreign key 2)</li>
     </ul>
 
 </div>
