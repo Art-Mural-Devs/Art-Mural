@@ -6,5 +6,32 @@
 </head>
 <body>
 
+<div>
+    <h1>Entities and Attributes</h1>
+
+    <h2>Profile</h2>
+    <ul>
+        <li>profileId (primary key)</li>
+        <li>profileActivationToken</li>
+        <li>profileEmail</li>
+        <li>profileHash</li>
+        <li>profileUsername</li>
+    </ul>
+
+    <h2>Like</h2>
+    <ul>
+        <li>likeProfileID (foreign key)</li>
+        <li>likeMuralId (foreign key)</li>
+    </ul>
+
+    <h2>Mural</h2>
+    <ul>
+        <li>muralID (primary key)</li>
+        <li>muralProfileId (foreign key)</li>
+        <li>muralContent</li>
+        <li>muralDate</li>
+    </ul>
+</div>
+
 </body>
 </html>
