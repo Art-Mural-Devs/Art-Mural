@@ -30,11 +30,21 @@
         <li>muralProfileId (foreign key)</li>
         <li>muralContent</li>
         <li>muralDate</li>
+        <li>muralImage</li>
     </ul>
 
-    <h2>Map Clusters</h2>
+    <h2>Main Map</h2>
     <ul>
-        <li></li>
+        <li>mapId (primary key)</li>
+        <li>dropPointId (foreign key)</li>
+    </ul>
+
+    <h2>Map Drop Points</h2>
+    <ul>
+        <li>dropPointId (primary key)</li>
+        <li>muralId (foreign key)</li>
+        <li>profileId (foreign key)</li>
+        <li>dropPointLocation</li>
     </ul>
 
 </div>
