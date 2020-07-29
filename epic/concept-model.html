@@ -11,27 +11,30 @@
 
     <h2>Profile</h2>
     <p>Users will be able to create a profile that allows them to like and upload murals.</p>
-    <p>One to one - One user can create one profile.</p>
+    <p>One to many - One user can create one profile and can like many murals with their profile.</p>
     <ul>
         <li>profileId (primary key)</li>
         <li>profileActivationToken</li>
         <li>profileEmail</li>
         <li>profileHash</li>
         <li>profileName</li>
-        <li>profileUsername</li>
+        <li>profileInfo</li>
     </ul>
 
 
     <h2>Mural</h2>
-    <p>Murals will be submitted by users as well as by us developers.</p>
-    <p>Many to Many - Many murals can be submitted by many users</p>
+    <p>Murals will appear on their own page and all have drop points on the main map, with some also having drop points on the route maps, as well. </p>
+    <p>One to Many - There are many murals and many maps, and each mural will have one drop point. </p>
     <ul>
         <li>muralId (primary key)</li>
-        <li>muralLikeProfileId (foreign key 1)</li>
-        <li>muralProfileId (foreign key 2)</li>
+        <li>muralArtist</li>
         <li>muralContent</li>
+        <li>muralDropPoint</li>
         <li>muralDate</li>
         <li>muralImage</li>
+        <li>muralImageUrl</li>
+        <li>muralLatLong</li>
+        <li>muralTitle</li>
     </ul>
 
 
@@ -42,8 +45,8 @@
     <ul>
         <li>routeId (primary key)</li>
         <li>routeDropPointId (foreign key 1)</li>
-        <li>routeMuralId (foreign key 2)</li>
         <li>routeMapContent</li>
+        <li>routeMuralId</li>
     </ul>
 
 
