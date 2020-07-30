@@ -18,22 +18,23 @@
         <li>profileEmail</li>
         <li>profileHash</li>
         <li>profileName</li>
-        <li>profileInfo</li>
+        <li>profileContent</li>
     </ul>
 
 
     <h2>Mural</h2>
     <p>Murals will appear on their own page and all have drop points on the main map, with some also having drop points on the route maps, as well. </p>
-    <p>One to Many - There are many murals and many maps, and each mural will have one drop point. </p>
+    <p>One to Many - There are many murals and many maps, and each mural will have one drop point. (many side)</p>
     <ul>
         <li>muralId (primary key)</li>
+        <li>muralRouteMapId (foreign key)</li>
         <li>muralArtist</li>
-        <li>muralContent</li>
-        <li>muralDropPoint</li>
-        <li>muralDate</li>
-        <li>muralImage</li>
+        <li>muralAddress</li>
+        <li>muralContent (pending based on wireframe)</li>
+        <li>muralCreationDate</li>
         <li>muralImageUrl</li>
-        <li>muralLatLong</li>
+        <li>muralLat</li>
+        <li>muralLong</li>
         <li>muralTitle</li>
     </ul>
 
@@ -43,10 +44,12 @@
     Routes are designed to ease the user's burden of planning and allows them to choose a predefined route to explore.</p>
     <p>Many to Many - There will be many routes with many drop points.</p>
     <ul>
-        <li>routeId (primary key)</li>
-        <li>routeDropPointId (foreign key 1)</li>
+        <li>routeMapId (primary key)</li>
+        <li>routeMapImageURL</li>
+        <li>routeMapName</li>
+        <li>routeNeighborhoodLat</li>
+        <li>routeNeighborhoodLong</li>
         <li>routeMapContent</li>
-        <li>routeMuralId</li>
     </ul>
 
 
