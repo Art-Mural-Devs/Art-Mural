@@ -1,11 +1,11 @@
 
 @media only screen and (max-width: 767px) {
     .titleMainPage .display-3{
-        font-size: 220%;
-        margin: 0.2rem 0;
+        font-size: 240%;
+        margin: 0;
     }
     .display-4 {
-        font-size: 220%;
+        font-size: 200%;
     }
 }
 /*****Navbar ******/
@@ -64,7 +64,7 @@
 }
 /*****Section images-Main ******/
 .image-random {
-    margin: 10rem 0;
+    margin: 15rem 0;
 }
 .image-random img{
     width: 95%;
@@ -73,4 +73,19 @@
 }
 .image-random img:hover {
     transform: scale(1.2);
+}
+/*****Footer ******/
+.footer-fluid {
+    background-color: #535c68;
+    padding: 3rem 1rem 2rem;
+    font-size: 1.6rem;
+}
+.Footer-Note {
+    text-align: center;
+    font-size: 20px;
+    color: white;
+    padding: 1rem 0 0;
+}
+.footer-fluid .fa {
+    color: #17A2B8;
 }
