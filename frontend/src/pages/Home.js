@@ -8,6 +8,7 @@ import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import map from "./mapMural.png"
 import randomImage from "./albuquerque_mural_0001_Layer-70.jpg"
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 
 export const Home = () => {
   return (
@@ -120,33 +121,42 @@ export const Home = () => {
                 <h2 className="text-white">The website was created by: </h2>
               </Col>
             </Row>
-            <Row xs={1} md={4} className="pt-4">
-              <Col>
+            <Row md={4} className="pt-4">
+              <Col sm={12}>
                 <a href="#" target="_blank">
-                  <p className="text-white"> Alison C Maez
-                    <i className="fa fa-linkedin fa-lg p-2"></i></p></a>
+                  <p className="name"> Alison C Maez
+                  <FontAwesomeIcon id="linkedInIcon" icon={["fab", "linkedin"]}/></p>
+                </a>
 
               </Col>
-              <Col>
+              <Col sm={12}>
                 <a href="https://www.linkedin.com/in/andrei-hristian-a673551b3/" target="_blank">
-                  <p className="text-white"> Andrei Hristian
-                    <i className="fa fa-linkedin fa-lg p-2"></i></p></a>
+                  <p className="name"> Andrei Hristian
+                  <FontAwesomeIcon id="linkedInIcon" icon={["fab", "linkedin"]}/></p>
+                </a>
 
               </Col>
-              <Col>
+              <Col sm={12}>
                 <a href="#" target="_blank">
-                  <p className="text-white"> John Jaramillo
-                  <i className="fa fa-linkedin fa-lg p-2"></i></p></a>
+                  <p className="name"> John Jaramillo
+                  <FontAwesomeIcon id="linkedInIcon" icon={["fab", "linkedin"]}/></p>
+                </a>
               </Col>
-              <Col>
+              <Col sm={12}>
                 <a href="#" target="_blank">
-                  <p className="text-white"> Josh Duffy
-                    <i className="fa fa-linkedin fa-lg p-2"></i></p></a>
+                  <p className="name"> Josh Duffy
+                  <FontAwesomeIcon id="linkedInIcon" icon={["fab", "linkedin"]}/></p>
+                  </a>
               </Col>
             </Row>
             <Row>
               <Col>
-                <p className="Footer-Note">Graduates of Deep Dive Coding, Cohort #30 </p>
+                <p className="Footer-Note">Graduates of <a href="https://deepdivecoding.com/"> Deep Dive Coding </a>, Cohort #30  </p>
+              </Col>
+            </Row>
+            <Row>
+              <Col>
+                <p className="Footer-Note">2020 Albuquerque, New Mexico </p>
               </Col>
             </Row>
           </Container>

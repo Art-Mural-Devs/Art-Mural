@@ -98,13 +98,21 @@
     background-color: #535c68;
     padding: 3rem 1rem 2rem;
     font-size: 1.6rem;
+    color: white;
 }
 .Footer-Note {
     text-align: center;
     font-size: 20px;
     color: white;
-    padding: 1rem 0 0;
+    padding: 0.5rem 0 0;
 }
-.footer-fluid .fa {
+#linkedInIcon {
+    margin-left: 1rem;
+    color: #17A2B8;
+}
+.name {
+    color: white;
+}
+.name:hover {
     color: #17A2B8;
 }
