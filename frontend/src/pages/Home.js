@@ -28,8 +28,8 @@ export const Home = () => {
         </Navbar>
 
 
-        <Container className="background-mainPage py-5">
-          <Container className="my-5">
+        <Container className="background-mainPage py-3">
+          <Container>
             <Row>
               <Col className="titleMainPage">
                 <h1 className="display-3 text-white">Ready for your next Mural Tour</h1>
@@ -54,7 +54,7 @@ export const Home = () => {
               </Col>
             </Row>
           </Container>
-          <Container className="mt-5" fluid>
+          <Container fluid>
             <Row>
               <Col className="quoteMain">
                 <p>The power of Street Art is that it goes to people`s daily life to be seen</p>
@@ -116,29 +116,29 @@ export const Home = () => {
         <Container className="footer-fluid" fluid>
           <Container>
             <Row>
-              <div className="col">
+              <Col>
                 <h2 className="text-white">The website was created by: </h2>
-              </div>
+              </Col>
             </Row>
-            <Row className="pt-4">
-              <Col className="col-sm">
+            <Row xs={1} md={4} className="pt-4">
+              <Col>
                 <a href="#" target="_blank">
                   <p className="text-white"> Alison C Maez
                     <i className="fa fa-linkedin fa-lg p-2"></i></p></a>
 
               </Col>
-              <Col className="col-sm">
+              <Col>
                 <a href="https://www.linkedin.com/in/andrei-hristian-a673551b3/" target="_blank">
                   <p className="text-white"> Andrei Hristian
                     <i className="fa fa-linkedin fa-lg p-2"></i></p></a>
 
               </Col>
-              <Col className="col-sm">
+              <Col>
                 <a href="#" target="_blank">
                   <p className="text-white"> John Jaramillo
                   <i className="fa fa-linkedin fa-lg p-2"></i></p></a>
               </Col>
-              <Col className="col-sm">
+              <Col>
                 <a href="#" target="_blank">
                   <p className="text-white"> Josh Duffy
                     <i className="fa fa-linkedin fa-lg p-2"></i></p></a>
