@@ -151,7 +151,7 @@ export const Home = () => {
             </Row>
             <Row>
               <Col>
-                <p className="Footer-Note">Graduates of <a href="https://deepdivecoding.com/"> Deep Dive Coding </a>, Cohort #30  </p>
+                <p className="Footer-Note">Graduates of <a className="name" href="https://deepdivecoding.com/"> Deep Dive Coding </a>, Cohort #30  </p>
               </Col>
             </Row>
             <Row>
