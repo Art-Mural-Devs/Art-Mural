@@ -5,7 +5,6 @@ import Nav from 'react-bootstrap/Nav'
 export const Navigation = () => {
   return (
     <>
-
         <Navbar collapseOnSelect expand="md" bg="info" variant="dark">
           <Navbar.Brand className="mb-0 pl-5">ABQMural</Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav "/>
