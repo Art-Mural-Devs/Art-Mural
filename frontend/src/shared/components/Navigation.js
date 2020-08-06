@@ -10,11 +10,11 @@ export const Navigation = () => {
           <Navbar.Toggle aria-controls="responsive-navbar-nav "/>
           <Navbar.Collapse id="responsive-navbar-nav" className="justify-content-end">
             <Nav className="px-1 pr-5 ">
-              <Nav.Link href="#features">Home</Nav.Link>
-              <Nav.Link href="#pricing">Murals</Nav.Link>
-              <Nav.Link href="#pricing">Routes</Nav.Link>
-              <Nav.Link href="#pricing">Contact</Nav.Link>
-              <Nav.Link href="#pricing">Log in</Nav.Link>
+              <Nav.Link href="/">Home</Nav.Link>
+              <Nav.Link href="/muralsPage">Murals</Nav.Link>
+              <Nav.Link href="/routesMainPage">Routes</Nav.Link>
+              <Nav.Link href="/contactPage">Contact</Nav.Link>
+              <Nav.Link href="/logInPage">Log in</Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </Navbar>

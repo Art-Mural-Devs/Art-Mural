@@ -14,8 +14,8 @@ import {LogInPage} from "./pages/LogInPage"
 
 import { library } from "@fortawesome/fontawesome-svg-core"
 import { faLinkedin } from '@fortawesome/free-brands-svg-icons'
-import { Navigation } from './components/Navigation'
-import { FooterElement } from './components/FooterElement'
+import { Navigation } from './shared/components/Navigation'
+import { FooterElement } from './shared/components/FooterElement'
 import "./pages/styleHome.css"
 
 library.add(faLinkedin);
@@ -25,11 +25,11 @@ const Routing = () => (
     <BrowserRouter>
       <Navigation/>
       <Switch>
-        <Route exact path="/MuralsPage" component={MuralsPage} />
-        <Route exact path="/RoutesMainPage" component={RoutesMainPage} />
-        <Route exact path="/RoutePage" component={RoutePage} />
-        <Route exact path="/ContactPage" component={ContactPage} />
-        <Route exact path="/LogInPage" component={LogInPage} />
+        <Route exact path="/muralsPage" component={MuralsPage} />
+        <Route exact path="/routesMainPage" component={RoutesMainPage} />
+        <Route exact path="/routePage" component={RoutePage} />
+        <Route exact path="/contactPage" component={ContactPage} />
+        <Route exact path="/logInPage" component={LogInPage} />
         <Route exact path="/" component={Home}/>
         <Route component={FourOhFour}/>
       </Switch>

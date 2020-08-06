@@ -3,7 +3,7 @@ import React from "react"
 export const RoutePage = () => {
   return (
     <>
-      <h1>Y U NO FIND</h1>
+      <h1>This is single route page</h1>
     </>
   )
 };

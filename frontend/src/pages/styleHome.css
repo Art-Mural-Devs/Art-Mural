@@ -37,7 +37,7 @@
 
 /*****Header Main Page******/
 .background-mainPage {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.8)), url("./covretest.jpg");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.8)), url("../shared/images/covretest.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
