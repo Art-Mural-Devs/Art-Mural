@@ -1,0 +1,57 @@
+
+@media only screen and (max-width: 767px) {
+    .titleMainPage .display-3{
+        font-size: 240%;
+        margin: 0;
+    }
+    .display-4 {
+        font-size: 200%;
+    }
+}
+
+.display-3{
+    margin: 12rem 0 1rem;
+}
+.display-4 {
+    color: #535c68;
+    margin: 3rem;
+}
+.quoteMain {
+    color: white;
+    font-style: italic;
+    text-align: right;
+    font-weight: 300;
+    font-size: 2rem;
+    margin-top: 2rem;
+}
+/*****Section Map-Main ******/
+#mapImage {
+    width: 95%;
+    text-align: center;
+    padding-left: 3rem;
+}
+/*****Section text-Main ******/
+.text-mainPage {
+    margin-top: 10rem;
+}
+.text-mainPage p{
+    padding: 3rem 0;
+    font-size: 25px;
+    text-align: justify ;
+}
+
+/*****Footer ******/
+.footer-fluid {
+    background-color: #535c68;
+    padding: 3rem 1rem 2rem;
+    font-size: 1.6rem;
+}
+.Footer-Note {
+    text-align: center;
+    font-size: 20px;
+    color: white;
+    padding: 1rem 0 0;
+}
+.footer-fluid .fa {
+    color: #17A2B8;
+}
