@@ -8,7 +8,7 @@ import { Home } from "./pages/Home";
 import {MuralsPage} from "./pages/MuralsPage"
 import {RoutesMainPage} from "./pages/RoutesMainPage"
 import {RoutePage} from "./pages/RoutePage"
-import {ContactPage} from "./pages/ContactPage"
+import ContactPage from "./pages/ContactPage"
 import {LogInPage} from "./pages/LogInPage"
 
 
