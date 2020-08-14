@@ -3,7 +3,7 @@
 .idea
 */.Ds_Store
 # Make sure to update this to match your project
-/project.env
+/abqmurals.env
 */.pnp
 */.pnp.js
 
