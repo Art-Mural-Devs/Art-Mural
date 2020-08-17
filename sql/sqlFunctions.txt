@@ -1,0 +1,7 @@
+
+How to do this:
+Go through your wireframes and think about how you are using each of your entities on each page.
+* Are you filtering your entities by something?
+* Are you getting all of them?
+* Are you displaying them one at a time?  By what criteria? (id, name, email etc.)
+When you're finished, make sure you get an instructor feedback on your choices.
