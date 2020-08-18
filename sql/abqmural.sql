@@ -21,14 +21,13 @@ CREATE TABLE profile (
 -- create the mural entity
 CREATE TABLE mural (
                        muralId BINARY(16) NOT NULL,
+                       muralTitle CHAR(150) NOT NULL,
                        muralArtist VARCHAR(255) NOT NULL,
                        muralAddress VARCHAR(255) NOT NULL,
-                       muralContent VARCHAR(1000) NOT NULL,
                        muralCreationYear YEAR(4) NOT NULL,
                        muralImageUrl VARCHAR(140) NOT NULL,
                        muralLat VARCHAR(250) NOT NULL,
                        muralLong VARCHAR(250) NOT NULL,
-                       muralTitle CHAR(150) NOT NULL,
                        PRIMARY KEY(muralId)
 );
 -- create the route entity
