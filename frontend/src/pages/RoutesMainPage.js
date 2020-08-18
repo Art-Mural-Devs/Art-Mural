@@ -23,36 +23,37 @@ export const RoutesMainPage = () => {
             </Card>
           </Col>
           <Col lg={true} style={{marginBottom: '2rem'}}>
+            <a href="/routePage">
             <Card style={{ width:'30rem' }}>
-              <a href="/routePage">
                 <Card.Img variant="top" src="http://farm4.staticflickr.com/3044/2479130748_15f6abb119_m.jpg" fluid/>
-              </a>
+
               <Card.Body>
                 <Card.Title className='text-center'>Downtown</Card.Title>
               </Card.Body>
             </Card>
+            </a>
           </Col>
         </Row>
         <Row>
           <Col lg={true} style={{marginBottom: '2rem'}}>
+            <a href="/routePage">
+              <Card.Img variant="top" src="http://farm4.staticflickr.com/3044/2479130748_15f6abb119_m.jpg" fluid/>
             <Card style={{ width:'30rem' }}>
-              <a href="/routePage">
-                <Card.Img variant="top" src="http://farm4.staticflickr.com/3044/2479130748_15f6abb119_m.jpg" fluid/>
-              </a>
               <Card.Body>
                 <Card.Title className='text-center'>Nob Hill</Card.Title>
               </Card.Body>
             </Card>
+            </a>
           </Col>
           <Col lg={true} style={{marginBottom: '2rem'}}>
+            <a href="/routePage">
             <Card style={{ width:'30rem' }}>
-              <a href="/routePage">
                 <Card.Img variant="top" src="http://farm4.staticflickr.com/3044/2479130748_15f6abb119_m.jpg" fluid/>
-              </a>
               <Card.Body>
                 <Card.Title className='text-center'>5th Street</Card.Title>
               </Card.Body>
             </Card>
+            </a>
           </Col>
         </Row>
       </Container>
