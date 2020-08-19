@@ -15,10 +15,10 @@
     <ul>
         <li>profileId (primary key)</li>
         <li>profileActivationToken</li>
+        <li>profileContent</li>
         <li>profileEmail</li>
         <li>profileHash</li>
         <li>profileName</li>
-        <li>profileContent</li>
     </ul>
 
 
@@ -27,11 +27,9 @@
     <p>One to Many - There are many murals and many maps, and each mural will have one drop point. (many side)</p>
     <ul>
         <li>muralId (primary key)</li>
-        <li>muralRouteMapId (foreign key)</li>
         <li>muralArtist</li>
         <li>muralAddress</li>
-        <li>muralContent (pending based on wireframe)</li>
-        <li>muralCreationDate</li>
+        <li>muralCreationYear</li>
         <li>muralImageUrl</li>
         <li>muralLat</li>
         <li>muralLong</li>
@@ -39,17 +37,17 @@
     </ul>
 
 
-    <h2>Route Maps</h2>
+    <h2>Route</h2>
     <p>This is the entity for the routes page where pre-mapped routes are created based on walk time and proximity between murals.
     Routes are designed to ease the user's burden of planning and allows them to choose a predefined route to explore.</p>
     <p>Many to Many - There will be many routes with many drop points.</p>
     <ul>
-        <li>routeMapId (primary key)</li>
-        <li>routeMapImageURL</li>
-        <li>routeMapName</li>
+        <li>routeId (primary key)</li>
+        <li>routeContent</li>
+        <li>routeImageURL</li>
+        <li>routeName</li>
         <li>routeNeighborhoodLat</li>
         <li>routeNeighborhoodLong</li>
-        <li>routeMapContent</li>
     </ul>
 
 
@@ -59,6 +57,13 @@
     <ul>
         <li>likeProfileID (foreign key 1)</li>
         <li>likeMuralId (foreign key 2)</li>
+        <li>likeDate</li>
+    </ul>
+
+    <h2>MuralRoute</h2>
+    <ul>
+        <li>muralRouteRouteId (fk1)</li>
+        <li>muralRouteMuralId (fk2)</li>
     </ul>
 
 </div>
