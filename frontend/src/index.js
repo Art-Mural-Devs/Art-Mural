@@ -10,6 +10,7 @@ import {RoutesMainPage} from "./pages/RoutesMainPage"
 import {RoutePage} from "./pages/RoutePage"
 import {ContactPage} from "./pages/ContactPage"
 import {LogInPage} from "./pages/LogInPage"
+import {ProfilePage} from "./pages/ProfilePage"
 
 
 import { library } from "@fortawesome/fontawesome-svg-core"
@@ -30,6 +31,7 @@ const Routing = () => (
         <Route exact path="/routePage" component={RoutePage} />
         <Route exact path="/contactPage" component={ContactPage} />
         <Route exact path="/logInPage" component={LogInPage} />
+        <Route exact path="/profilePage" component={ProfilePage} />
         <Route exact path="/" component={Home}/>
         <Route component={FourOhFour}/>
       </Switch>

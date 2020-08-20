@@ -5,22 +5,24 @@ import Col from 'react-bootstrap/Col'
 import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button'
 
-export const MuralsPage = () => {
+export const ProfilePage = () => {
   return (
     <>
-      <h1 className={"text-center my-4"}>Albuquerque Murals</h1>
-      <Container style={{marginBottom: '3rem'}}>
-        <h4>Sort By:</h4>
-        <Row style={{flexDirection: 'row', alignItems: 'center', justifyContent: 'space-around'}}>
-          <Button size="lg" style={{background:"#17a2b8"}}>Most Liked</Button>{' '}
-          <Button size="lg" style={{background:"#17a2b8"}}>Mural Name (A-Z)</Button>{' '}
-          <Button size="lg" style={{background:"#17a2b8"}}>Year (newest)</Button>{' '}
-          <Button size="lg" style={{background:"#17a2b8"}}>Author (A-Z)</Button>{' '}
+      <h1 className={"text-center my-4"}>My Profile</h1>
+      <Container>
+        <Row>
+          <Col>
+            <label><h4>Name: </h4></label>
+          </Col>
+          <Col>
+            <label><h4>Email: </h4></label>
+          </Col>
         </Row>
       </Container>
       <Container>
+        <h5>My Liked Murals</h5>
         <Row>
-          <Col lg={true} style={{marginBottom: '2rem', alignItems: 'center'}}>
+          <Col lg={true} style={{marginBottom: '2rem'}}>
             <Card style={{ width:'18rem' }}>
               <Card.Img variant="top" src="http://farm4.staticflickr.com/3044/2479130748_15f6abb119_m.jpg" fluid/>
               <Card.Header className={"text-center"}><Button style={{background:"#17a2b8"}}>Like</Button></Card.Header>
