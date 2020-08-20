@@ -5,6 +5,7 @@ import Col from 'react-bootstrap/Col'
 import Card from 'react-bootstrap/Card'
 
 
+
 export const RoutesMainPage = () => {
   return (
     <>
@@ -12,38 +13,46 @@ export const RoutesMainPage = () => {
       <Container>
         <Row>
           <Col lg={true} style={{marginBottom: '3rem'}}>
+            <a href="/routePage">
             <Card style={{ width:'30rem' }}>
               <Card.Img variant="top" src="http://farm4.staticflickr.com/3044/2479130748_15f6abb119_m.jpg" fluid/>
                <Card.Body>
                 <Card.Title className='text-center'>South Valley</Card.Title>
                 </Card.Body>
             </Card>
+            </a>
           </Col>
           <Col lg={true} style={{marginBottom: '2rem'}}>
+            <a href="/routePage">
             <Card style={{ width:'30rem' }}>
-              <Card.Img variant="top" src="http://farm4.staticflickr.com/3044/2479130748_15f6abb119_m.jpg" fluid/>
+                <Card.Img variant="top" src="http://farm4.staticflickr.com/3044/2479130748_15f6abb119_m.jpg" fluid/>
               <Card.Body>
                 <Card.Title className='text-center'>Downtown</Card.Title>
               </Card.Body>
             </Card>
+            </a>
           </Col>
         </Row>
         <Row>
           <Col lg={true} style={{marginBottom: '2rem'}}>
-            <Card style={{ width:'30rem' }}>
-              <Card.Img variant="top" src="http://farm4.staticflickr.com/3044/2479130748_15f6abb119_m.jpg" fluid/>
-              <Card.Body>
-                <Card.Title className='text-center'>Nob Hill</Card.Title>
-              </Card.Body>
-            </Card>
+            <a href="/routePage">
+              <Card style={{ width:'30rem' }}>
+                <Card.Img variant="top" src="http://farm4.staticflickr.com/3044/2479130748_15f6abb119_m.jpg" fluid/>
+                <Card.Body>
+                  <Card.Title className='text-center'>Nob Hill</Card.Title>
+                </Card.Body>
+              </Card>
+            </a>
           </Col>
           <Col lg={true} style={{marginBottom: '2rem'}}>
+            <a href="/routePage">
             <Card style={{ width:'30rem' }}>
-              <Card.Img variant="top" src="http://farm4.staticflickr.com/3044/2479130748_15f6abb119_m.jpg" fluid/>
+                <Card.Img variant="top" src="http://farm4.staticflickr.com/3044/2479130748_15f6abb119_m.jpg" fluid/>
               <Card.Body>
                 <Card.Title className='text-center'>5th Street</Card.Title>
               </Card.Body>
             </Card>
+            </a>
           </Col>
         </Row>
       </Container>

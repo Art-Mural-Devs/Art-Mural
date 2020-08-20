@@ -8,11 +8,10 @@ import { Home } from "./pages/Home";
 import {MuralsPage} from "./pages/MuralsPage"
 import {RoutesMainPage} from "./pages/RoutesMainPage"
 import {RoutePage} from "./pages/RoutePage"
-import {ContactPage} from "./pages/ContactPage"
+import ContactPage from "./pages/ContactPage"
 import {LogInPage} from "./pages/LogInPage"
 import {ProfilePage} from "./pages/ProfilePage"
-
-
+import {SignInPage} from "./pages/SignInPage"
 import { library } from "@fortawesome/fontawesome-svg-core"
 import { faLinkedin } from '@fortawesome/free-brands-svg-icons'
 import { Navigation } from './shared/components/Navigation'
@@ -26,6 +25,7 @@ const Routing = () => (
     <BrowserRouter>
       <Navigation/>
       <Switch>
+        <Route exact path="/sign-in" component={SignInPage} />
         <Route exact path="/muralsPage" component={MuralsPage} />
         <Route exact path="/routesMainPage" component={RoutesMainPage} />
         <Route exact path="/routePage" component={RoutePage} />
