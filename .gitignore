@@ -1,2 +1,4 @@
 .DS_Store
 /.idea
+abqmural.env
+**/node_modules
