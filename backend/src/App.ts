@@ -1,4 +1,5 @@
 import express, { Application } from 'express'
+import MuralRoute from './routes/mural.routes';
 import morgan from 'morgan'
 // Routes
 import { indexRoutes } from './routes/index.routes'
@@ -31,6 +32,7 @@ export class App {
     private routes () {
         // TODO add "/apis"
         this.app.use('/apis', indexRoutes)
+        this.app.use('/apis/murals', MuralRoute);
     }
 
     // starts the server and tells the terminal to post a message that the server is running and on what port
