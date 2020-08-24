@@ -1,5 +1,4 @@
 
-import {Murals} from "../interfaces/Murals";
 import {connect} from "../../src/database";
 
 export async function getAllMurals() {

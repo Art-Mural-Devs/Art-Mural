@@ -8,4 +8,5 @@ router.route('/')
     .get(getAllMuralsController)
 
 
+
 export default router;

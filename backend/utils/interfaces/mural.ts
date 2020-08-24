@@ -1,4 +1,4 @@
-export interface Murals {
+export interface Mural {
     muralId: string|null;
     muralAddress: string;
     muralArtist: string;
