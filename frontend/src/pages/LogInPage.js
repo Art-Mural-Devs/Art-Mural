@@ -4,37 +4,47 @@ export const LogInPage   = () => {
   return (
     <>
         <div className="container">
-            <div className="row mt-5">
-                <div className="col-sm-12">
-                    <h2 className="text-center">Login</h2>
+            <div className="row  mt-5 mb-5">
+                <div className="col-sm-3 offset-sm-3">
+                    <form>
+                        <h2 class="text-center mb-5">LOG IN</h2>
+                        <div className="form-group">
+                            <label htmlFor="loginEmail">email</label>
+                            <input type="email" className="form-control" id="loginEmail"
+                                   aria-describedby="emailHelp" placeholder="enter email"/>
+                        </div>
+                        <div className="form-group">
+                            <label htmlFor="loginPassword">password</label>
+                            <input type="password" className="form-control" id="loginPassword"
+                                   placeholder="password"/>
+                        </div>
+
+                        <button type="submit" className="btn btn-primary">log in</button>
+                    </form>
                 </div>
-            </div>
-            <div className="row d-flex align-items-center mt-3">
-                <div className="col-12 col-sm-4">
-                    <label htmlFor="email">Email: </label>
-                </div>
-                <div className="col-12 col-sm-8">
-                    <div className="form-group mb-0">
-                        <input type="email" className="form-control" id="email" placeholder="Enter Your email"/>
-                    </div>
-                </div>
-            </div>
-            <div className="row d-flex align-items-center mt-3">
-                <div className="col-12 col-sm-4">
-                    <label htmlFor="password">Password: </label>
-                </div>
-                <div className="col-12 col-sm-8">
-                    <div className="form-group mb-0">
-                        <input type="password" className="form-control" id="password" placeholder="Enter Your password"/>
-                    </div>
-                </div>
-            </div>
-            <div className="row d-flex align-items-center mt-3 mb-5">
-                <div className="col-12 col-sm-4"></div>
-                <div className="col-12 col-sm-8">
-                    <div className="form-group mb-0">
-                        <button type="button" className="btn btn-light border">Login</button>
-                    </div>
+
+                <div className="col-sm-3 offset-sm-1">
+                    <form>
+                        <h2 class="text-center mb-5">SIGN UP</h2>
+                        <div className="form-group">
+                            <label htmlFor="signupEmail">email</label>
+                            <input type="email" className="form-control" id="signupEmail"
+                                   aria-describedby="emailHelp" placeholder="enter email"/>
+                        </div>
+
+                        <div className="form-group">
+                            <label htmlFor="signupUsername">username</label>
+                            <input type="password" className="form-control" id="signupUsername"
+                                   placeholder="username"/>
+                        </div>
+
+                        <div className="form-group">
+                            <label htmlFor="signupPassword">password</label>
+                            <input type="password" className="form-control" id="signupPassword"
+                                   placeholder="password"/>
+                        </div>
+                        <button type="submit" className="btn btn-primary">create account</button>
+                    </form>
                 </div>
             </div>
         </div>
