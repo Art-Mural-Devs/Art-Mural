@@ -1,7 +1,7 @@
 import {Route} from "../interfaces/Route";
 import {connect} from "../../src/database";
 
-export async function getAllRoutes() :Promise <any> {
+export async function selectAllRoutes() :Promise <any> {
     try {
         const mySqlConnection = await connect()
         const mySqlQuery = "(SELECT routeId, routeContent, routeImageUrl, routeName, routeNeighbourhoodLat, routeNeighbourhoodLong FROM route)";
