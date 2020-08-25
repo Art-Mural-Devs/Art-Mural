@@ -4,11 +4,7 @@ import {insertMural} from '../../utils/mural/insertMurals';
 import {getAllMurals} from '../../utils/mural/getAllMurals';
 import {SelectMuralsByMuralsTitle} from '../../utils/mural/SelectMuralsByMuralsTitle';
 
-
-
 // Interfaces (represent the DB model and types of the columns associated with a specific DB table)
-
-
 export async function getAllMuralsController(request: Request, response: Response) {
     try {
             const data = await getAllMurals()
