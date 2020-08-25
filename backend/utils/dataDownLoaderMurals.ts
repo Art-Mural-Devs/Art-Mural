@@ -20,13 +20,14 @@ function dataDownLoaderMurals() : Promise<any> {
 
     try {
       const {data} = await axios.get("https://coagisweb.cabq.gov/arcgis/rest/services/public/PublicArt/MapServer/0/query?where=1%3D1&text=&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&relationParam=&outFields=*&returnGeometry=true&maxAllowableOffset=&geometryPrecision=&outSR=&returnIdsOnly=false&returnCountOnly=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&returnZ=false&returnM=false&gdbVersion=&returnDistinctValues=false&f=pjson")
+      let count = 0
       let muralsArray = []
       for (let i = 0; i < data.features.length; i++) {
         if (data.features[i].attributes.TYPE == 'mural paintings (visual works)') {
-          muralsArray = data.features[i]
+          muralsArray[count] = data.features[i]
+          count = count + 1
         }
       }
-      console.log("muralsArray.length", muralsArray)
       for (const muralElement of muralsArray) {
         let mural : Mural = {
           muralId: null,
@@ -38,7 +39,7 @@ function dataDownLoaderMurals() : Promise<any> {
           muralLong: muralElement.attributes.Y,
           muralTitle: muralElement.attributes.TITLE
         }
-        console.log(mural);
+
         let result = await insertMural(mural)
         console.log(result);
       }

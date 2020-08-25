@@ -20,9 +20,9 @@ CREATE TABLE profile (
 -- create the mural entity
 CREATE TABLE mural (
                        muralId BINARY(16) NOT NULL,
-                       muralAddress VARCHAR(255) NOT NULL,
-                       muralArtist VARCHAR(255) NOT NULL,
-                       muralCreationYear CHAR(4) NOT NULL,
+                       muralAddress VARCHAR(255),
+                       muralArtist VARCHAR(255),
+                       muralCreationYear CHAR(4) ,
                        muralImageUrl VARCHAR(140) NOT NULL,
                        muralLat DECIMAL(8,5) NOT NULL,
                        muralLong DECIMAL(8,5) NOT NULL,
