@@ -1,5 +1,6 @@
 import { Router } from 'express';
-import {getAllMuralsController} from '../controllers/mural.controller';
+import {getAllMuralsController, SelectMuralsByMuralsTitleController} from '../controllers/mural.controller';
+
 
 const router = Router();
 
