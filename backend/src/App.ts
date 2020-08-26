@@ -1,6 +1,7 @@
-import express, { Application } from 'express'
+import express, { Application } from 'express';
 import MuralRoute from './routes/mural.routes';
-import morgan from 'morgan'
+/*import LikeRoute from './routes/like.routes';*/
+import morgan from 'morgan';
 // Routes
 import { indexRoutes } from './routes/index.routes'
 
@@ -30,9 +31,9 @@ export class App {
 
     // private method for setting up routes in their basic sense (ie. any route that performs an action on profiles starts with /profiles)
     private routes () {
-        // TODO add "/apis"
         this.app.use('/apis', indexRoutes)
         this.app.use('/apis/murals', MuralRoute);
+     /*   this.app.use('/apis/like', LikeRoute);*/
     }
 
     // starts the server and tells the terminal to post a message that the server is running and on what port
