@@ -1,9 +1,10 @@
 
 import {connect} from "../../src/database";
 
-export async function getMuralsByMostLiked(likeProfileId: string) {
+export async function getMuralsByMostLiked() {
     const mySqlConnection = await connect();
-    const mySqlQuery = 'SELECT BIN_TO_UUID(muralId) AS muralId, muralAddress, muralArtist, muralCreationYear, muralImageUrl, muralLat, muralLong, muralTitle FROM mural, (SELECT COUNT(*) FROM `like` WHERE mural.muralId = like.likeMuralId) AS likeCount FROM `like` INNER JOIN profile ON profile.profileId = like.likeProfileId WHERE likeProfileId = UUID_TO_BIN(:likeProfileId) ORDER BY likeCount DESC'
-    const [rows] = await mySqlConnection.execute(mySqlQuery, {likeProfileId})
-    return rows;
-}
+    const mySqlQuery = "SELECT BIN_TO_UUID(likeMuralId) AS likeMuralId, BIN_TO_UUID(muralId) AS muralId, muralAddress, muralArtist, muralCreationYear, muralImageUrl, muralLat, muralLong, muralTitle, COUNT(likeMuralId) as mostLiked FROM mural LEFT JOIN `like` ON mural.muralId = like.likeMuralId GROUP BY mural.muralId ORDER BY mostLiked DESC";
+
+        const [rows] = await mySqlConnection.execute(mySqlQuery)
+        return rows;
+    }
