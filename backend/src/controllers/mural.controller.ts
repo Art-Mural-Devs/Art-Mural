@@ -16,7 +16,8 @@ export async function getAllMuralsController(request: Request, response: Respons
         }
     }
 export async function getMuralsByMostLikedController(request : Request, response: Response){
-    const     {likeProfileId} = request.params
-    const data  = await getMuralsByMostLiked(likeProfileId)
-    return response.json({status:200, message: null, data})
+    const data = await getMuralsByMostLiked()
+    const status: Status = {status: 200, message: null, data};
+    return response.json(status);
 }
+
