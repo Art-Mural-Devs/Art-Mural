@@ -1,7 +1,7 @@
 import {Request, Response} from 'express';
 import {Status} from '../../utils/interfaces/Status';
 import {getAllMurals} from '../../utils/mural/getAllMurals';
-import {getMuralsByMostLiked} from "../../utils/mural/getMuralsByMostLiked";
+import {getMuralsOrderedByMostLiked} from "../../utils/mural/getMuralsOrderedByMostLiked";
 
 
 // Interfaces (represent the DB model and types of the columns associated with a specific DB table)
@@ -15,8 +15,8 @@ export async function getAllMuralsController(request: Request, response: Respons
             console.log(error);
         }
     }
-export async function getMuralsByMostLikedController(request : Request, response: Response){
-    const data = await getMuralsByMostLiked()
+export async function getMuralsOrderedByMostLikedController(request : Request, response: Response){
+    const data = await getMuralsOrderedByMostLiked()
     const status: Status = {status: 200, message: null, data};
     return response.json(status);
 }
