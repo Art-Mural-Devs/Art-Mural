@@ -17,6 +17,7 @@ CREATE TABLE profile (
                          PRIMARY KEY(profileId)
 );
 
+
 -- create the mural entity
 CREATE TABLE mural (
                        muralId BINARY(16) NOT NULL,
@@ -29,6 +30,7 @@ CREATE TABLE mural (
                        muralTitle CHAR(150) NOT NULL,
                        PRIMARY KEY(muralId)
 );
+
 -- create the route entity
 CREATE TABLE route (
                        routeId BINARY(16) NOT NULL,
@@ -49,7 +51,6 @@ CREATE TABLE `like` (
                        FOREIGN KEY(likeProfileId) REFERENCES profile(profileId),
                        PRIMARY KEY (likeMuralId, likeProfileId)
 );
-
 -- create the muralRoute entity
 CREATE TABLE muralRoute (
                         muralRouteMuralId BINARY(16) NOT NULL,
