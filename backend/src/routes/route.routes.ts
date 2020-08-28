@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import {getAllRoutesController} from "../controllers/route.controller";
+import {getAllRoutesController, selectRouteByRouteIdController} from "../controllers/route.controller";
 // const { checkSchema } = require('express-validator');
 
 const router = Router();
@@ -8,4 +8,9 @@ const router = Router();
 router.route('/')
     .get(getAllRoutesController)
 
+
+router.route('/selectRoutes')
+    .get(selectRouteByRouteIdController)
+
 export default router;
+
