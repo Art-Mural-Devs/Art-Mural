@@ -1,4 +1,4 @@
-import { Tweet } from '../../utils/interfaces/Tweet';
+import { Tweet } from '../../utils/interfaces/';
 import { Status } from '../../utils/interfaces/Status';
 import {Request, Response} from "express";
 
