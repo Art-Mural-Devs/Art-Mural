@@ -6,7 +6,6 @@ class ContactPage extends React.Component {
     this.state = {
       name: '',
       email: '',
-      phone: '',
       message: ''
     };
   }
@@ -49,16 +48,6 @@ class ContactPage extends React.Component {
               <div className="col-12 col-sm-8">
                 <div className="form-group mb-0">
                   <input type="email" className="form-control" onChange={this.handleChange} name="email" id="email" placeholder="Enter Your email"/>
-                </div>
-              </div>
-            </div>
-            <div className="row d-flex align-items-center mt-3">
-              <div className="col-12 col-sm-4">
-                <label htmlFor="phone">Phone nr.: </label>
-              </div>
-              <div className="col-12 col-sm-8">
-                <div className="form-group mb-0">
-                  <input type="tel" className="form-control" onChange={this.handleChange} name="phone" id="phone" placeholder="Enter Your phone number"/>
                 </div>
               </div>
             </div>
