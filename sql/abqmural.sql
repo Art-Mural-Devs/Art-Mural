@@ -16,6 +16,9 @@ CREATE TABLE profile (
                          UNIQUE(profileEmail),
                          PRIMARY KEY(profileId)
 );
+INSERT INTO profile (profileId, profileActivationToken, profileContent, profileEmail, profileHash, profileName) VALUES (UUID_TO_BIN('a406967b-14f1-407f-9ba0-23889ee9eb97'), 'password', 'test 0 profile Peter', 'peter@peter.com', 'I dont know what', 'Pete Something');
+
+INSERT INTO profile (profileId, profileActivationToken, profileContent, profileEmail, profileHash, profileName) VALUES (UUID_TO_BIN('e0d5a414-e496-4f74-8e98-b7010235281d'), 'password', 'test 0 profile Carl', 'carl@carl.com', 'I dont know what', 'Carl Something');
 
 
 -- create the mural entity
@@ -41,6 +44,7 @@ CREATE TABLE route (
                        routeNeighbourhoodLong DECIMAL(5,2) NOT NULL,
                        PRIMARY KEY(routeId)
 );
+
 -- create the like entity
 CREATE TABLE `like` (
                        likeMuralId BINARY(16) NOT NULL,
@@ -51,6 +55,13 @@ CREATE TABLE `like` (
                        FOREIGN KEY(likeProfileId) REFERENCES profile(profileId),
                        PRIMARY KEY (likeMuralId, likeProfileId)
 );
+INSERT INTO `like` (likeMuralId, likeProfileId) VALUES (UUID_TO_BIN('0a1c9e12-e6eb-11ea-a7af-0242ac150002'),UUID_TO_BIN('e0d5a414-e496-4f74-8e98-b7010235281d'));
+INSERT INTO `like` (likeMuralId, likeProfileId) VALUES (UUID_TO_BIN('0a0ce316-e6eb-11ea-a7af-0242ac150002'), UUID_TO_BIN('e0d5a414-e496-4f74-8e98-b7010235281d'));
+INSERT INTO `like` (likeMuralId, likeProfileId) VALUES (UUID_TO_BIN('0a03c610-e6eb-11ea-a7af-0242ac150002'), UUID_TO_BIN('e0d5a414-e496-4f74-8e98-b7010235281d'));
+INSERT INTO `like` (likeMuralId, likeProfileId) VALUES (UUID_TO_BIN('0a0ce316-e6eb-11ea-a7af-0242ac150002'), UUID_TO_BIN('a406967b-14f1-407f-9ba0-23889ee9eb97'));
+INSERT INTO `like` (likeMuralId, likeProfileId) VALUES (UUID_TO_BIN('0a03c610-e6eb-11ea-a7af-0242ac150002'), UUID_TO_BIN('a406967b-14f1-407f-9ba0-23889ee9eb97'));
+
+
 -- create the muralRoute entity
 CREATE TABLE muralRoute (
                         muralRouteMuralId BINARY(16) NOT NULL,
