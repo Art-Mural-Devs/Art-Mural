@@ -1,9 +1,13 @@
 import express, { Application } from 'express';
 import MuralRoute from './routes/mural.routes';
-/*import LikeRoute from './routes/like.routes';*/
-import morgan from 'morgan';
+
+import morgan from 'morgan'
+import bodyParser from 'body-parser'
+import cors from 'cors'
 // Routes
 import { indexRoutes } from './routes/index.routes'
+import signupRoutes from './routes/signup.route'
+import Basicauth from './routes/basic-authentication'
 
 // The following class creates the app and instantiates the server
 export class App {
@@ -26,19 +30,25 @@ export class App {
     // private method to setting up the middleware to handle json responses, one for dev and one for prod
     private middlewares () {
         this.app.use(morgan('dev'))
+        this.app.use(cors());
         this.app.use(express.json())
+        this.app.use(bodyParser.urlencoded({ extended: false, limit: '5mb' }));
+        this.app.use(bodyParser.json());
+
     }
 
     // private method for setting up routes in their basic sense (ie. any route that performs an action on profiles starts with /profiles)
     private routes () {
         this.app.use('/apis', indexRoutes)
         this.app.use('/apis/murals', MuralRoute);
-     /*   this.app.use('/apis/like', LikeRoute);*/
+
+        this.app.use('/apis/signup', signupRoutes)
+        this.app.use('/apis/auth',Basicauth)
     }
 
     // starts the server and tells the terminal to post a message that the server is running and on what port
     public async listen (): Promise<void> {
         await this.app.listen(this.app.get('port'))
-        console.log('Express application built successfully')
+        console.log(`Express application built successfully on port ${this.app.get('port')}`)
     }
 }
