@@ -12,8 +12,11 @@ let connection: any;
 
  let useremail:string =''
  let confirmUrl:string =`http://localhost:3000/confirmEmail/${useremail}`
-let APIKEY:string = 'fc1214fd252130c1324453afa7a33c98-203ef6d0-9a10649d';
- let DOMAIN:string = 'https://app.mailgun.com/app/sending/domains/sandbox86db9147f80c43a18aa0453d1dc7051b.mailgun.org';
+
+let APIKEY:string = '91bcc8c627066bc0ca329f986d7826dd-4d640632-b1f64d23';
+ let DOMAIN:string = 'https://app.mailgun.com/app/sending/domains/sandboxbfbeb4900c3949918751b3afa2647106.mailgun.org';
+
+
 
 router.get('/',(req:Request, res:Response) =>{
     console.log('Log me')
@@ -87,12 +90,13 @@ router.post('/login',async (req: Request, res:Response) => {
             if(result.length){
                 const match = await bcryptjs.compare(req.body.password, result[0].password)
                 if(!match){
-                    return  res.status(401).json({error: true, mesage:"Either email or password is incorrect"})
+                    return  res.status(401).json({error: true, message:"Either email or password is incorrect"})
                 }else{
                     return res.status(200).json({error: false, message:"login success", user: result[0]})
                 }
 
-
+            }else{
+                return  res.status(401).json({error: true, message:"Either email or password is incorrect"})
             }
 
         }
@@ -110,8 +114,12 @@ router.post('/testMailgun',(req:Request, res:Response):void =>{
     mailer.init();
 
     mailer
-        .send('jjames310@icloud.com', 'Hello from sample app!', '<h1>hsdf</h1>')
-        .then((result) => console.log('Done', result))
+        .send('jaypy510@gmail.com', 'Hello from sample app!', '<h1>hsdf</h1>')
+        .then((result) => {
+            console.log('Done', result)
+            return res.status(200).json({error:false, message:"Email sent"})
+
+        })
         .catch((error) => console.error('Error: ', error));
 })
 
