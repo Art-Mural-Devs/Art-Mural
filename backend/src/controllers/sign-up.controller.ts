@@ -8,8 +8,6 @@ import {insertProfile} from "../../utils/profile/insertProfile";
 
 const mailgun = require("mailgun-js")
 
-// Interfaces (represent the DB model and types of the columns associated with a specific DB table)
-
 
 export async function signupProfileController(request: Request, response: Response) {
     try {
@@ -18,7 +16,7 @@ export async function signupProfileController(request: Request, response: Respon
         const {profileContent, profileEmail, profileName, profilePassword} = request.body;
         const profileHash = await setHash(profilePassword);
         const profileActivationToken = setActivationToken();
-        const basePath = `${request.protocol}://${request.get('host')}${request.originalUrl}activation/${profileActivationToken}`
+        const basePath = `${request.protocol}://${request.get('host')}${request.originalUrl}/activation/${profileActivationToken}`
         console.log(profileActivationToken)
 
         const message = `<h2>Welcome to ABQ Murals.</h2>

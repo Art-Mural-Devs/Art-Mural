@@ -24,7 +24,6 @@ export async function signInController(request: Request, response: Response, nex
                 const signature: string = uuid();
                 const authorization: string = generateJwt({profileId, profileEmail}, signature);
 
-
                 const signInFailed = (message: string) => response.json({
                     status: 400,
                     data: null,

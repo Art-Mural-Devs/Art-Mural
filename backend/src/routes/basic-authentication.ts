@@ -1,3 +1,5 @@
+/*
+
 import {Request, Response, Router}from 'express'
 import  bcryptjs from 'bcryptjs';
 import  mysql from 'mysql'
@@ -135,4 +137,4 @@ const sendEmail  =(recipent:string, greeting:string, sample:string)=> {
         .catch((error) => console.error('Error: ', error));
 }
 
-export default  router;
+export default  router;*/

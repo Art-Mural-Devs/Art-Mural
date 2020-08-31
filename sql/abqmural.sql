@@ -9,7 +9,7 @@ DROP TABLE IF EXISTS profile;
 CREATE TABLE profile (
                          profileId BINARY(16) NOT NULL,
                          profileActivationToken CHAR(32),
-                         profileContent VARCHAR(1000) NOT NULL,
+                         profileContent VARCHAR(1000),
                          profileEmail VARCHAR(128) NOT NULL,
                          profileHash CHAR(97) NOT NULL,
                          profileName VARCHAR(128) not null,
