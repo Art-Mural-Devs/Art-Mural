@@ -1,4 +1,3 @@
-import { Tweet } from '../../utils/interfaces/';
 import { Status } from '../../utils/interfaces/Status';
 import {Request, Response} from "express";
 
