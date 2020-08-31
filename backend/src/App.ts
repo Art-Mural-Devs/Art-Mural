@@ -1,6 +1,6 @@
 import express, { Application } from 'express';
 import MuralRoute from './routes/mural.routes';
-import RouteRoute from './routes/route.routes'
+import RouteRoute from './routes/route.routes';
 /*import LikeRoute from './routes/like.routes';*/
 import morgan from 'morgan';
 
@@ -35,8 +35,7 @@ export class App {
     private routes () {
         this.app.use('/apis', indexRoutes)
         this.app.use('/apis/murals', MuralRoute);
-
-        this.app.use('/apis/routes', RouteRoute)
+        this.app.use('/apis/routes', RouteRoute);
 
      /*   this.app.use('/apis/like', LikeRoute);*/
 

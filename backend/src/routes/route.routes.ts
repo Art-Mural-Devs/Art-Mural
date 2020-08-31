@@ -5,12 +5,12 @@ import {getAllRoutesController, selectRouteByRouteIdController} from "../control
 const router = Router();
 
 // Every new route is instantiated below. It will include the controller name and the type of action (get, post, delete, put, patch)
+router.route('/routeId/:routeId')
+    .get(selectRouteByRouteIdController)
+
 router.route('/')
     .get(getAllRoutesController)
 
-
-router.route('/selectRoutes')
-    .get(selectRouteByRouteIdController)
 
 export default router;
 

@@ -41,10 +41,10 @@ CREATE TABLE route (
                        routeNeighbourhoodLong DECIMAL(5,2) NOT NULL,
                        PRIMARY KEY(routeId)
 );
-insert into route (routeId, routeContent, routeImageUrl, routeName, routeNeighbourhoodLat, routeNeighbourhoodLong) values (UUID_TO_BIN('182dc467-5310-4683-baaa-ed3f14ec5d22'),'dsdffjj First Route', 'iamaurl.jpg', 'Nob Hill', '1234.567', '890.1011');
-insert into route (routeId, routeContent, routeImageUrl, routeName, routeNeighbourhoodLat, routeNeighbourhoodLong) values (UUID_TO_BIN('493ee371-0294-4dd0-9ed9-0bddc9949841'),'shdbajddb Second Route', 'iamaurl.jpg', 'Downtown', '1234.567', '890.1011');
-insert into route (routeId, routeContent, routeImageUrl, routeName, routeNeighbourhoodLat, routeNeighbourhoodLong) values (UUID_TO_BIN('9e40f0c9-97e0-4060-8ff3-2095fa77c7f9'),'ifjkedjljf Third Route', 'iamaurl.jpg', 'Huning Highland', '1234.567', '890.1011');
-insert into route (routeId, routeContent, routeImageUrl, routeName, routeNeighbourhoodLat, routeNeighbourhoodLong) values (UUID_TO_BIN('f744283d-626f-4c20-998b-7dfab5374b32'),'sdifjofjn Fourth Route', 'iamaurl.jpg', 'Raynold's Addition, '1234.567', '890.1011');
+insert into route (routeId, routeContent, routeImageUrl, routeName, routeNeighbourhoodLat, routeNeighbourhoodLong) values (UUID_TO_BIN('182dc467-5310-4683-baaa-ed3f14ec5d22'),'dsdffjj First Route', 'iamaurl.jpg', 'Nob Hill', '123.6', '123.6');
+insert into route (routeId, routeContent, routeImageUrl, routeName, routeNeighbourhoodLat, routeNeighbourhoodLong) values (UUID_TO_BIN('493ee371-0294-4dd0-9ed9-0bddc9949841'),'shdbajddb Second Route', 'iamaurl.jpg', 'Downtown', '123.6', '123.6');
+insert into route (routeId, routeContent, routeImageUrl, routeName, routeNeighbourhoodLat, routeNeighbourhoodLong) values (UUID_TO_BIN('9e40f0c9-97e0-4060-8ff3-2095fa77c7f9'),'ifjkedjljf Third Route', 'iamaurl.jpg', 'Huning Highland', '1234.5', '890.1011');
+insert into route (routeId, routeContent, routeImageUrl, routeName, routeNeighbourhoodLat, routeNeighbourhoodLong) values (UUID_TO_BIN('f744283d-626f-4c20-998b-7dfab5374b32'),'sdifjofjn Fourth Route', 'iamaurl.jpg', 'Raynolds Addition', '1234.567', '890.1011');
 
 
 -- create the like entity
@@ -67,3 +67,8 @@ CREATE TABLE muralRoute (
                         FOREIGN KEY(muralRouteRouteId) REFERENCES route(routeId),
                         PRIMARY KEY (muralRouteMuralId, muralRouteRouteId)
 );
+insert into muralRoute (muralRouteMuralId, muralRouteRouteId) values (UUID_TO_BIN('7d51743d-e7b6-11ea-ada3-0242ac150002'),UUID_TO_BIN('182dc467-5310-4683-baaa-ed3f14ec5d22'));
+insert into muralRoute (muralRouteMuralId, muralRouteRouteId) values (UUID_TO_BIN('7d53ab80-e7b6-11ea-ada3-0242ac150002'),UUID_TO_BIN('182dc467-5310-4683-baaa-ed3f14ec5d22'));
+insert into muralRoute (muralRouteMuralId, muralRouteRouteId) values (UUID_TO_BIN('7d53ab80-e7b6-11ea-ada3-0242ac150002'),UUID_TO_BIN('493ee371-0294-4dd0-9ed9-0bddc9949841'));
+insert into muralRoute (muralRouteMuralId, muralRouteRouteId) values (UUID_TO_BIN('7d54c09d-e7b6-11ea-ada3-0242ac150002'),UUID_TO_BIN('493ee371-0294-4dd0-9ed9-0bddc9949841'));
+
