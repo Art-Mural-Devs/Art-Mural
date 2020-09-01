@@ -1,11 +1,12 @@
 import { connect } from "../../src/database";
-import {Route} from "../interfaces/Route";
+import {MuralRoute} from "../interfaces/muralRoute";
 
-export async function selectMuralRouteByPrimaryKey (routeId: string) : Promise<Route|undefined> {
-
-    const mysqlConnection = await connect();
-
-    const [rows] = await mysqlConnection.execute('SELECT BIN_TO_UUID(muralRoutePrimaryKey) as routeId, routeId, routeContent, routeImageUrl, routeName, routeNeighbourhoodLat, routeNeighbourhoodLong, FROM route WHERE routeId = :routeId', {routeId});
-
-    // @ts-ignore is required so that rows can be interacted with like the array it is
-    return rows.length !== 0 ? {...rows[0]} : undefined;}
+export async function selectMuralRouteByPrimaryKey (muralRoute: MuralRoute) {
+    try {
+        const mySqlConnection = await connect()
+        const mySqlQuery = "SELECT FROM muralRoute WHERE muralRouteMuralId = UUID_TO_BIN(:muralRouteMuralId) AND muralRouteRouteId = UUID_TO_BIN(:muralRouteRouteId)";
+        const [rows] = await mySqlConnection.execute(mySqlQuery)
+    } catch(error) {
+        console.log(error)
+    }
+}
