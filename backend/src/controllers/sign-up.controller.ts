@@ -12,7 +12,6 @@ const mailgun = require("mailgun-js")
 export async function signupProfileController(request: Request, response: Response) {
     try {
 
-
         const {profileContent, profileEmail, profileName, profilePassword} = request.body;
         const profileHash = await setHash(profilePassword);
         const profileActivationToken = setActivationToken();
@@ -27,8 +26,8 @@ export async function signupProfileController(request: Request, response: Respon
         const mailgunMessage = {
             from: `Mailgun Sandbox <postmaster@${process.env.MAILGUN_DOMAIN}>`,
             to: profileEmail,
-            subject: "One step closer to Sticky Head -- Account Activation",
-            text: 'Test email text',
+            subject: "Account Activation for Murals",
+            text: 'Please click here to activate to start your mural experience',
             html: message
         }
 
@@ -46,7 +45,7 @@ export async function signupProfileController(request: Request, response: Respon
         const emailComposer: MailComposer = new MailComposer(mailgunMessage)
 
         emailComposer.compile().build((error: any, message: Buffer) => {
-            const mg = mailgun({apiKey: process.env.MAILGUN_API_KEY, domain: process.env.MAILGUN_DOMAIN});
+            const mg = mailgun({apiKey: "10afd7f408b7763c7ac6ddc70bb13979-7cd1ac2b-5654ecb4", domain: process.env.MAILGUN_DOMAIN});
 
             console.log(message.toString("ascii"))
             const compiledEmail = {

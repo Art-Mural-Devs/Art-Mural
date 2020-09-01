@@ -3,6 +3,7 @@ import MuralRoute from './routes/mural.routes';
 import SignupRoute from './routes/sign-up.route';
 import LikeRoute from './routes/like.routes';
 import morgan from 'morgan';
+import bodyParser from 'body-parser';
 
 // Routes
 import IndexRoutes from './routes/index.routes';
@@ -50,6 +51,8 @@ export class App {
 
         this.app.use(morgan('dev'));
         this.app.use(express.json());
+        this.app.use(bodyParser.urlencoded({ extended: false, limit: '5mb' }));
+        this.app.use(bodyParser.json());
         this.app.use(session(sessionConfig));
         this.app.use(passport.initialize());
         this.app.use(passport.session());
