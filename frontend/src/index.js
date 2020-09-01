@@ -17,11 +17,16 @@ import { faLinkedin } from '@fortawesome/free-brands-svg-icons'
 import { Navigation } from './shared/components/Navigation'
 import { FooterElement } from './shared/components/FooterElement'
 import "./pages/styleHome.css"
+import {configureStore} from '@reduxjs/toolkit'
+import reducer from './store'
+import {Provider} from 'react-redux'
 
+const store = configureStore({reducer})
 library.add(faLinkedin);
 
 const Routing = () => (
   <>
+    <Provider store={store}>
     <BrowserRouter>
       <Navigation/>
       <Switch>
@@ -37,6 +42,7 @@ const Routing = () => (
       </Switch>
       <FooterElement/>
     </BrowserRouter>
-  </>
+  </Provider>
+    </>
 );
 ReactDOM.render(<Routing/>, document.querySelector('#root'));
