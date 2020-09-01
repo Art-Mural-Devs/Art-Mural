@@ -10,7 +10,7 @@ export async function getProfileByProfileIdController(request : Request, respons
     const data = await selectProfileByProfileId(profileId)
     return response.json({status: 200, message: null, data})
 }
-export async function putProfile(request: Request, response: Response) {
+export async function putProfileController(request: Request, response: Response) {
     try {
 
         const {profileContent,profileEmail,profilePassword,profileName} = request.body;

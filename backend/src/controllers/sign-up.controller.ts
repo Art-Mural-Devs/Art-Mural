@@ -19,7 +19,7 @@ export async function signupProfileController(request: Request, response: Respon
         console.log(profileActivationToken)
 
         const message = `<h2>Welcome to ABQ Murals.</h2>
-<p>In order to start liking murals you must confirm your account </p>
+<p>In order to start liking murals you must confirm your account! </p>
 <p><a href="${basePath}">${basePath}</a></p>
 `
 
@@ -37,7 +37,7 @@ export async function signupProfileController(request: Request, response: Respon
             profileContent,
             profileEmail,
             profileHash,
-            profileName,
+            profileName
         };
 
         const result = await insertProfile(profile)
@@ -45,7 +45,7 @@ export async function signupProfileController(request: Request, response: Respon
         const emailComposer: MailComposer = new MailComposer(mailgunMessage)
 
         emailComposer.compile().build((error: any, message: Buffer) => {
-            const mg = mailgun({apiKey: "10afd7f408b7763c7ac6ddc70bb13979-7cd1ac2b-5654ecb4", domain: process.env.MAILGUN_DOMAIN});
+            const mg = mailgun({apiKey: process.env.MAILGUN_API_KEY, domain: process.env.MAILGUN_DOMAIN});
 
             console.log(message.toString("ascii"))
             const compiledEmail = {

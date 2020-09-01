@@ -14,6 +14,7 @@ import passport = require('passport');
 import {SignOutRoute} from "./routes/sign-out.route";
 const MemoryStore = require('memorystore')(session);
 import csrf from "csurf";
+import {ProfileRoute} from "./routes/profile.route";
 
 export class App {
     app: Application;
@@ -67,7 +68,7 @@ export class App {
         this.app.use('/apis/sign-out', SignOutRoute);
         this.app.use('/apis/sign-up', SignupRoute);
         this.app.use('/apis/like', LikeRoute);
-
+        this.app.use('/apis/profile', ProfileRoute);
     }
 
     // starts the server and tells the terminal to post a message that the server is running and on what port
