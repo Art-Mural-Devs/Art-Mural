@@ -2,3 +2,4 @@
 /.idea
 abqmural.env
 **/node_modules
+/abqmural.env

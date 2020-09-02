@@ -14,7 +14,7 @@ export const Navigation = () => {
               <Nav.Link href="/muralsPage">Murals</Nav.Link>
               <Nav.Link href="/routesMainPage">Routes</Nav.Link>
               <Nav.Link href="/contactPage">Contact</Nav.Link>
-              <Nav.Link href="/logInPage">Log in</Nav.Link>
+              {localStorage.getItem('authUser') && localStorage.getItem('authUser').length> 0  ? <p style={{color:'white',paddingTop:'10px', paddingLeft:'10px'}} onClick={() =>{localStorage.setItem("authUser",'')}}>Log out</p> : <Nav.Link href="/logInPage">Log in</Nav.Link>}
             </Nav>
           </Navbar.Collapse>
         </Navbar>

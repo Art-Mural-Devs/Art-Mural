@@ -9,14 +9,13 @@ DROP TABLE IF EXISTS profile;
 CREATE TABLE profile (
                          profileId BINARY(16) NOT NULL,
                          profileActivationToken CHAR(32),
-                         profileContent VARCHAR(1000) NOT NULL,
+                         profileContent VARCHAR(1000),
                          profileEmail VARCHAR(128) NOT NULL,
                          profileHash CHAR(97) NOT NULL,
                          profileName VARCHAR(128) not null,
                          UNIQUE(profileEmail),
                          PRIMARY KEY(profileId)
 );
-
 
 -- create the mural entity
 CREATE TABLE mural (
@@ -41,6 +40,7 @@ CREATE TABLE route (
                        routeNeighbourhoodLong DECIMAL(5,2) NOT NULL,
                        PRIMARY KEY(routeId)
 );
+
 -- create the like entity
 CREATE TABLE `like` (
                        likeMuralId BINARY(16) NOT NULL,
@@ -51,6 +51,7 @@ CREATE TABLE `like` (
                        FOREIGN KEY(likeProfileId) REFERENCES profile(profileId),
                        PRIMARY KEY (likeMuralId, likeProfileId)
 );
+
 -- create the muralRoute entity
 CREATE TABLE muralRoute (
                         muralRouteMuralId BINARY(16) NOT NULL,
