@@ -4,6 +4,7 @@ import {setHash} from "../lib/auth.utils";
 import {Profile} from "../../utils/interfaces/Profile";
 import {updateProfile} from "../../utils/profile/updateProfile";
 import {Status} from "../../utils/interfaces/Status";
+import {selectAllProfiles} from "../../utils/profile/selectAllProfiles";
 
 export async function getProfileByProfileIdController(request : Request, response: Response, nextFunction: NextFunction) {
     const {profileId} = request.params
@@ -34,6 +35,21 @@ export async function putProfileController(request: Request, response: Response)
         };
         return response.json(status);
 
+    } catch(error) {
+        console.log(error);
+    }
+}
+export async function getAllProfilesController(request: Request, response: Response): Promise<Response | void> {
+
+
+    try {
+
+        //const profile: Profile | string = request.session?.profile ?? "No user signed in";
+
+        const data = await selectAllProfiles()
+        // return the response
+        const status: Status = {status: 200, message: null, data};
+        return response.json(status);
     } catch(error) {
         console.log(error);
     }
