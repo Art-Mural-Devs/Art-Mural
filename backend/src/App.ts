@@ -6,7 +6,7 @@ import bodyParser from 'body-parser'
 import cors from 'cors'
 // Routes
 import { indexRoutes } from './routes/index.routes'
-import signupRoutes from './routes/signup.route'
+import signupRoutes from './routes/sign-up.route'
 import Basicauth from './routes/basic-authentication'
 
 // The following class creates the app and instantiates the server
@@ -42,7 +42,7 @@ export class App {
         this.app.use('/apis', indexRoutes)
         this.app.use('/apis/murals', MuralRoute);
 
-        this.app.use('/apis/signup', signupRoutes)
+        this.app.use('/apis/sign-up', signupRoutes)
         this.app.use('/apis/auth',Basicauth)
     }
 
