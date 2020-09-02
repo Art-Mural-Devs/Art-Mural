@@ -1,10 +1,12 @@
 import React,{useState} from "react"
 import  axios from 'axios';
 import { useHistory } from "react-router-dom";
+import {SignUpForm} from "./SignupForm";
 
 
-let BASE_URL = "http://localhost:4200/apis"
+
 export const LogInPage   = () => {
+
     let history = useHistory();
     const [userDetails, setUserDetails]= useState({name:"", email:'', password:''})
     const [userLoginDetails, setUserLoginDetails]= useState({email:'', password:''})
@@ -14,7 +16,9 @@ export const LogInPage   = () => {
     const[loginErrorMsg, setLoginErrorMsg] = useState('')
     const[loginSuccessMsg, setloginSuccessMsg] = useState('')
 
-    function handleSignUp (e) {
+
+
+
 
         e.preventDefault()
         console.log('===>', userDetails)
@@ -61,6 +65,9 @@ export const LogInPage   = () => {
         const value = e.target.value;
        setUserLoginDetails({...userLoginDetails, [e.target.name]: value});
     }
+
+
+
   return (
     <>
         <div className="container">
@@ -97,6 +104,7 @@ export const LogInPage   = () => {
                 </div>
 
                 <div className="col-sm-3 offset-sm-1">
+
 
                     <form onSubmit={handleSignUp}>
                         <h2 class="text-center mb-5">SIGN UP</h2>
@@ -144,6 +152,12 @@ export const LogInPage   = () => {
                         </div>
                         <button type="submit" className="btn btn-primary">create account</button>
                     </form>
+
+
+                        <h2 className="text-center mb-5">SIGN UP</h2>
+
+                    <SignUpForm></SignUpForm>
+
                 </div>
             </div>
         </div>

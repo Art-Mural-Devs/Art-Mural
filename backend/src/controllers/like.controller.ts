@@ -1,8 +1,5 @@
 
 import {Request, Response} from 'express';
-
-
-// Interfaces (represent the DB model and types of the columns associated with a specific DB table)
 import {Status} from '../../utils/interfaces/Status';
 import {Profile} from "../../utils/interfaces/Profile";
 import {Like} from "../../utils/interfaces/Like";
@@ -15,7 +12,7 @@ const {validationResult} = require('express-validator');
 export async function toggleLikeController(request: Request, response: Response) {
 
     try {
-        /*validationResult(request).throw();
+        validationResult(request).throw();
 
         const {likeMuralId} = request.body;
         const profile: Profile = request.session?.profile
@@ -25,13 +22,14 @@ export async function toggleLikeController(request: Request, response: Response)
             likeProfileId,
             likeMuralId,
         }
+
         const select = await selectLike(like)
+        // @ts-ignore
         if (select[0]){
             const result = await deleteLike(like)
         }else{
             const result = await insertLike(like)
-        }*/
-
+        }
         const status: Status = {
             status: 200,
             message: 'Like successfully updated',
