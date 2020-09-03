@@ -33,7 +33,7 @@ export const ProfileDetails = ()=> {
                    <h5>My  Details</h5>
                 </div>
                 <div className='box username'>
-                      <h3>{Username}</h3>
+                      {/*<h3>{Username}</h3>*/}
                 </div>
 
                 <div className='box details' >
