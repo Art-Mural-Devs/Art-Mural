@@ -5,6 +5,7 @@ import Col from 'react-bootstrap/Col'
 import Card from 'react-bootstrap/Card'
 import { useDispatch, useSelector } from 'react-redux'
 import { fetchAllRoutes } from '../store/route'
+import { RouteMainCard } from '../shared/components/routeMainCard'
 
 
 
@@ -24,28 +25,11 @@ console.table(routes)
       <h1 className={"text-center mt-4 mb-5"}>Albuquerque Routes</h1>
       <Container>
         <Row>
-          <Col lg={true} style={{marginBottom: '3rem'}}>
-            <a href="/routePage">
-            <Card style={{ width:'30rem' }}>
-              <Card.Img variant="top" src="http://farm4.staticflickr.com/3044/2479130748_15f6abb119_m.jpg" fluid/>
-               <Card.Body>
-                <Card.Title className='text-center'>South Valley</Card.Title>
-                </Card.Body>
-            </Card>
-            </a>
-          </Col>
-          <Col lg={true} style={{marginBottom: '2rem'}}>
-            <a href="/routePage">
-            <Card style={{ width:'30rem' }}>
-                <Card.Img variant="top" src="http://farm4.staticflickr.com/3044/2479130748_15f6abb119_m.jpg" fluid/>
-              <Card.Body>
-                <Card.Title className='text-center'>Downtown</Card.Title>
-              </Card.Body>
-            </Card>
-            </a>
-          </Col>
+          {routes.map( route => <RouteMainCard route={route} />)}
+
         </Row>
       </Container>
     </>
   )
 };
+

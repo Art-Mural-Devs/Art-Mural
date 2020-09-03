@@ -33,7 +33,7 @@ const Routing = () => (
         <Route exact path="/sign-in" component={SignInPage} />
         <Route exact path="/muralsPage" component={MuralsPage} />
         <Route exact path="/routesMainPage" component={RoutesMainPage} />
-        <Route exact path="/routePage" component={RoutePage} />
+        <Route exact path="/routePage/:routeId" component={RoutePage} routeId=":routeId" />
         <Route exact path="/contactPage" component={ContactPage} />
         <Route exact path="/logInPage" component={LogInPage} />
         <Route exact path="/profilePage" component={ProfilePage} />
