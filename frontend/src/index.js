@@ -32,25 +32,23 @@ const Routing = (store) => (
   <>
     <Provider store={store}>
       <BrowserRouter>
-      <Navigation/>
-      <Switch>
-        <Route exact path="/profileDetails" component={ProfileDetails} />
-        <Route exact path="/murals" component={MuralsPage} />
-        <Route exact path="/profileDetails" component={ProfileDetails} />
-        <Route exact path="/routesMainPage" component={RoutesMainPage} />
-        <Route exact path="/routePage" component={RoutePage} />
-        <Route exact path="/contactPage" component={ContactPage} />
-        <Route exact path="/logInPage" component={LogInPage} />
-        <Route exact path="/profilePage" component={ProfilePage} />
-        <Route exact path="/" component={Home}/>
-        <Route exact path="/confirmEmail" component={ConfirmEmail}/>
-        <Route component={FourOhFour}/>
-      </Switch>
-      <FooterElement/>
-    </BrowserRouter>
+        <Navigation/>
+        <Switch>
+          <Route exact path="/profileDetails" component={ProfileDetails} />
+          <Route exact path="/murals" component={MuralsPage} />
+          <Route exact path="/routesMainPage" component={RoutesMainPage} />
+          <Route exact path="/routePage" component={RoutePage} />
+          <Route exact path="/contactPage" component={ContactPage} />
+          <Route exact path="/logInPage" component={LogInPage} />
+          <Route exact path="/profilePage" component={ProfilePage} />
+          <Route exact path="/" component={Home}/>
+          <Route exact path="/confirmEmail" component={ConfirmEmail}/>
+          <Route component={FourOhFour}/>
+        </Switch>
+        <FooterElement/>
+      </BrowserRouter>
     </Provider>
   </>
 );
 
 ReactDOM.render(Routing(store), document.querySelector("#root"));
-
