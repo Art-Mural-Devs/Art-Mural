@@ -39,7 +39,7 @@ const Routing = (store) => (
         <Route exact path="/routesMainPage" component={RoutesMainPage} />
         <Route exact path="/routePage" component={RoutePage} />
         <Route exact path="/contactPage" component={ContactPage} />
-      {/*<Route exact path="/logInPage" component={LogInPage} />*/}
+      <Route exact path="/logInPage" component={LogInPage} />
         <Route exact path="/profilePage" component={ProfilePage} />
         <Route exact path="/" component={Home}/>
         <Route exact path="/confirmEmail" component={ConfirmEmail}/>
