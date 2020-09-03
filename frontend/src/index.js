@@ -8,6 +8,7 @@ import { Home } from "./pages/Home";
 import {MuralsPage} from "./pages/MuralsPage"
 import {RoutesMainPage} from "./pages/RoutesMainPage"
 import {RoutePage} from "./pages/RoutePage"
+import ProfileDetails from "./pages/ProfileDetails"
 import ContactPage from "./pages/ContactPage"
 import {LogInPage} from "./pages/LogInPage"
 import ConfirmEmail from "./pages/ConfirmEmail"
@@ -27,7 +28,7 @@ const Routing = () => (
       <Switch>
 
         <Route exact path="/muralsPage" component={MuralsPage} />
-
+        <Route exact path="/profileDetails" component={ProfileDetails} />
         <Route exact path="/routesMainPage" component={RoutesMainPage} />
         <Route exact path="/routePage" component={RoutePage} />
         <Route exact path="/contactPage" component={ContactPage} />
