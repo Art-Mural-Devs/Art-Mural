@@ -5,7 +5,7 @@ module.exports = function(app) {
         logLevel: 'debug',
         target: "http://157.245.187.107:8080",
         changeOrigin: true,
-        secure: true,
+
 
     }));
 };
