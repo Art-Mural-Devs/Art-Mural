@@ -1,3 +1,5 @@
+/*
+
 import React,{useState} from "react"
 import  axios from 'axios';
 import { useHistory } from "react-router-dom";
@@ -134,11 +136,11 @@ export const LogInPage   = () => {
                             />
                         </div>
 
-                        {/*<div className="form-group">*/}
-                        {/*    <label htmlFor="profileContent"> Content</label>*/}
-                        {/*    <input className="form-control" id="profileContent"*/}
-                        {/*           placeholder="Content"/>*/}
-                        {/*</div>*/}
+                        {/!*<div className="form-group">*!/}
+                        {/!*    <label htmlFor="profileContent"> Content</label>*!/}
+                        {/!*    <input className="form-control" id="profileContent"*!/}
+                        {/!*           placeholder="Content"/>*!/}
+                        {/!*</div>*!/}
 
                         <div className="form-group">
                             <label htmlFor="signupPassword">Name</label>
@@ -164,3 +166,4 @@ export const LogInPage   = () => {
     </>
   )
 };
+*/
