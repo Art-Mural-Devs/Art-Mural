@@ -3,3 +3,4 @@
 abqmural.env
 **/node_modules
 /abqmural.env
+*/setupProxy.js
