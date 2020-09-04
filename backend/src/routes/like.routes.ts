@@ -4,6 +4,6 @@ import {isLoggedIn} from "../controllers/isLoggedIn.controller";
 
 const router = Router();
 
-router.route('/').get(isLoggedIn, toggleLikeController);
+router.route('/').post(isLoggedIn, toggleLikeController);
 
 export default router;

@@ -1,4 +1,5 @@
-import React from "react"
+import React, { useEffect } from "react"
+import { useDispatch, useSelector } from 'react-redux'
 import './styleHome.css'
 import Button from 'react-bootstrap/Button'
 import Container from 'react-bootstrap/Container'
@@ -8,7 +9,37 @@ import map from "../shared/images/mapMural.png"
 import randomImage from "../shared/images/albuquerque_mural_0001_Layer-70.jpg"
 import Image from 'react-bootstrap/Image'
 
+import { fetchMuralByMostLiked } from '../store/murals'
+
+
+
 export const Home = () => {
+
+  const dispatch = useDispatch()
+  const sideEffects = () => {
+    dispatch(fetchMuralByMostLiked())
+  }
+  React.useEffect(sideEffects, [])
+
+
+  const murals0 = useSelector(state => (
+    state.murals
+      ? state.murals[0]
+      : null
+  ));
+  const murals1 = useSelector(state => (
+    state.murals
+      ? state.murals[1]
+      : null
+  ));
+  const murals2 = useSelector(state => (
+    state.murals
+      ? state.murals[2]
+      : null
+  ));
+
+
+console.log(murals0, murals1, murals2 )
   return (
     <>
       <header>
@@ -81,18 +112,18 @@ export const Home = () => {
       </section>
 
       <section className="imageSection">
-        <Container fluid className="image-random">
-          <Row>
-            <Col className="pl-4 pr-0 py-3" sm={4}>
-              <Image src={randomImage} className="rounded " alt="Mural Image"/>
-            </Col>
-            <Col className="pl-4 pr-0 py-3" sm={4}>
-              <Image src={randomImage} className="rounded " alt="Mural Image"/>
-            </Col><Col className="pl-4 pr-0 py-3" sm={4}>
-            <Image src={randomImage} className="rounded " alt="Mural Image"/>
-          </Col>
+            <Container fluid className="image-random">
+              <Row>
+                <Col className="pl-4 pr-0 py-3" sm={4}>
+                  {murals0 && ( <Image src={murals0.muralImageUrl}/>)}
+                </Col>
+                <Col className="pl-4 pr-0 py-3" sm={4}>
+                  {murals1 && ( <Image src={murals1.muralImageUrl}/>)}
+                </Col><Col className="pl-4 pr-0 py-3" sm={4}>
+                {murals2 && ( <Image src={murals2.muralImageUrl}/>)}
+              </Col>
 
-          </Row>
+            </Row>
         </Container>
       </section>
     </>

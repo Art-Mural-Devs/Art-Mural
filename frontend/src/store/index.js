@@ -1,5 +1,5 @@
 import {combineReducers} from "redux"
-import users from "./users";
 
+import murals from "./murals";
 
-export default combineReducers({users})
+export default combineReducers({murals})

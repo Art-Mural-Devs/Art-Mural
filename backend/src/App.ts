@@ -2,21 +2,20 @@ import express, { Application } from 'express';
 import MuralRoute from './routes/mural.routes';
 import SignupRoute from './routes/sign-up.route';
 import LikeRoute from './routes/like.routes';
+import IndexRoutes from './routes/index.routes';
+import {SignOutRoute} from "./routes/sign-out.route";
 import morgan from 'morgan';
 import bodyParser from 'body-parser';
 
 // Routes
 
-import { indexRoutes } from './routes/index.routes'
 import signupRoutes from './routes/sign-up.route'
 // import Basicauth from './routes/basic-authentication'
 
-import IndexRoutes from './routes/index.routes';
 import { SignInRouter } from './routes/sign-in.route';
 import { passportMiddleware } from './lib/auth.controller';
 const session = require("express-session");
 import passport = require('passport');
-import {SignOutRoute} from "./routes/sign-out.route";
 const MemoryStore = require('memorystore')(session);
 import csrf from "csurf";
 import {ProfileRoute} from "./routes/profile.route";
@@ -35,14 +34,10 @@ export class App {
         this.routes();
     }
 
-
     // private method that sets the port for the sever, to one from index.route.ts, and external abqmural.env file or defaults to 3000
     private settings () {
         this.app.set('port', this.port || process.env.PORT || 3000);
-
     }
-
-
     // private method to setting up the middleware to handle json responses, one for dev and one for prod
     private middleware () {
 
@@ -63,7 +58,6 @@ export class App {
         this.app.use(session(sessionConfig));
         this.app.use(passport.initialize());
         this.app.use(passport.session());
-
     }
 
     // private method for setting up routes in their basic sense (ie. any route that performs an action on profiles starts with /profiles)
@@ -73,7 +67,7 @@ export class App {
 
 
         this.app.use('/apis/sign-up', signupRoutes)
-        this.app.use('/apis/auth',Basicauth)
+        // this.app.use('/apis/auth',Basicauth)
 
         this.app.use('/apis/sign-in', SignInRouter);
         this.app.use('/apis/sign-out', SignOutRoute);
