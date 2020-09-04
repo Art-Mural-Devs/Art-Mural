@@ -9,7 +9,7 @@ import bodyParser from 'body-parser';
 
 import { indexRoutes } from './routes/index.routes'
 import signupRoutes from './routes/sign-up.route'
-import Basicauth from './routes/basic-authentication'
+// import Basicauth from './routes/basic-authentication'
 
 import IndexRoutes from './routes/index.routes';
 import { SignInRouter } from './routes/sign-in.route';
