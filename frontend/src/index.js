@@ -32,7 +32,7 @@ const Routing = (store) => (
       <Navigation/>
       <Switch>
 
-        <Route exact path="/muralsPage" component={MuralsPage} />
+        <Route exact path="/murals" component={MuralsPage} />
         <Route exact path="/routesMainPage" component={RoutesMainPage} />
         <Route exact path="/routePage" component={RoutePage} />
         <Route exact path="/contactPage" component={ContactPage} />
