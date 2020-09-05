@@ -24,11 +24,13 @@ import {Provider} from "react-redux";
 //In order to use redux a store must be initialized and passed to the Provider component.
 const store = configureStore({reducer})
 
+
 library.add(faLinkedin);
 
-const Routing = () => (
+const Routing = (store) => (
   <>
     <Provider store={store}>
+
       <BrowserRouter>
       <Navigation/>
       <Switch>
@@ -50,5 +52,5 @@ const Routing = () => (
 
   </>
 );
+ReactDOM.render(Routing(store), document.querySelector('#root'))
 
-ReactDOM.render(Routing(store), document.querySelector("#root"));

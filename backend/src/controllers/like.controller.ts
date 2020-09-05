@@ -13,7 +13,7 @@ export async function toggleLikeController(request: Request, response: Response)
 
     try {
         validationResult(request).throw();
-
+console.log(request)
         const {likeMuralId} = request.body;
         const profile: Profile = request.session?.profile
         const likeProfileId = <string>profile.profileId
@@ -22,7 +22,6 @@ export async function toggleLikeController(request: Request, response: Response)
             likeProfileId,
             likeMuralId,
         }
-
         const select = await selectLike(like)
         // @ts-ignore
         if (select[0]){
@@ -36,7 +35,6 @@ export async function toggleLikeController(request: Request, response: Response)
             data: null
         };
         return response.json(status);
-
     } catch(error) {
         console.log(error);
     }
