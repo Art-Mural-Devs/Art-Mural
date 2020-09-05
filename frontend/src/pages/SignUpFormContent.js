@@ -96,18 +96,18 @@ export const SignUpFormContent = (props) => {
 
 
                 <div className="form-group">
-                    <label htmlFor="profileHandle">About Me</label>
+                    <label htmlFor="profileContent">About Me</label>
                     <div className="input-group">
                         <div className="input-group-prepend">
                             <div className="input-group-text">
                                 <FontAwesomeIcon icon="dove"/>
                             </div>
                         </div>
-                        <input
+                        <textarea
                             className="form-control"
-                            name="profileAtHandle"
+                            name="profileContent"
                             type="text"
-                            value={values.profileAtHandle}
+                            value={values.profileContent}
                             placeholder="About me"
                             onChange={handleChange}
                             onBlur={handleBlur}
@@ -115,9 +115,9 @@ export const SignUpFormContent = (props) => {
                         />
                     </div>
                     {
-                        errors.profileAtHandle && touched.profileAtHandle && (
+                        errors.profileContent && touched.profileContent && (
                             <div className="alert alert-danger">
-                                {errors.profileAtHandle}
+                                {errors.profileContent}
                             </div>
                         )
                     }
@@ -162,7 +162,7 @@ export const SignUpFormContent = (props) => {
                 </div>
 
 
-                <FormDebugger {...props} />
+
             </form>
             {
                 status && (<div className={status.type}>{status.message}</div>)

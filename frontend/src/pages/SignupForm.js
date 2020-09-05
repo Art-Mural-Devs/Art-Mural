@@ -8,7 +8,7 @@ import {SignUpFormContent} from "./SignUpFormContent.js";
 export const SignUpForm = () => {
     const signUp = {
         profileEmail: "",
-        profileAboutMe: "",
+        profileContent: "",
         profilePassword: "",
         profilePasswordConfirm: "",
         profileName: "",
@@ -19,7 +19,7 @@ export const SignUpForm = () => {
         profileEmail: Yup.string()
             .email("email must be a valid email")
             .required('email is required'),
-        profileAboutMe: Yup.string()
+        profileContent: Yup.string()
             .required("profile about me is required"),
         profilePassword: Yup.string()
             .required("Password is required")

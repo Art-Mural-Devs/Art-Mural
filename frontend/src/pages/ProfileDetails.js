@@ -16,49 +16,45 @@ export const ProfileDetails = ()=> {
 
     useEffect(effects, inputs);
 
-    const profiles = useSelector(state => {
-        console.log(state)
-    return state.profiles ? state.profiles : []
-    });
-    console.log(profiles)
+    const profile = useSelector(state => {
 
-    const profile = profiles[0]
+    return state.profile ? state.profile : []
+    });
 
 
 
         return (
-            <div className='container'>
-                <div className='yours'>
-                    <h2>Your Profile </h2>
-                   <h5>My  Details</h5>
-                </div>
-                <div className='box username'>
-                      {/*<h3>{Username}</h3>*/}
-                </div>
+            <>
+                {profile[0] ?
+                    <div className='container'>
+                        <div className='yours'>
+                            <h2>Your Profile</h2>
 
-                <div className='box details' >
-                    <div className='email'>
-                           <h3>Email: </h3>
-                        <p>myemail@gmail.com</p>
+                        </div>
+                        <div className='box username'>
+                            <h3>Username</h3>
+                            <p>{profile[0].profileName}</p>
+                        </div>
+
+                        <div className='box details'>
+                            <div className='email'>
+                                <h3>Email: </h3>
+                                <p>{profile[0].profileEmail}</p>
+                            </div>
+
+                            {/*<div className='box likes'>*/}
+                            {/*    <h3>Likes</h3>*/}
+                            {/*    <p>jogging</p>*/}
+                            {/*    <p>eating</p>*/}
+                            {/*</div>*/}
+                        </div>
+
+                        <div className='box aboutMe'>
+                            <p>{profile[0].profileContent}</p>
+                        </div>
                     </div>
-
-                    <div className='box likes'>
-                      <h3>Likes</h3>
-                        <p>jogging</p>
-                        <p>eating</p>
-                    </div>
-                </div>
-
-                <div className='box aboutMe'>
-                    <p>
-                        lorem jgfifbfdbklfklgfkl kbfdkfbdklfdblk
-                        hdhjfhjfvj uirgiuorgorg fbfjkbfkjbbjjkb jvfjf
-                        hdhidvhdfhfvh grugrrugiu bfbjfbjkbkjbjkgfjb vkgk
-                        dvjdhjvvhvf fbjfbjfbklklkl.fdhrehfh jfjfbjf
-                        efhdfhdvhdv  fjgvjrjgrjg gjgkr.
-                    </p>
-                </div>
-            </div>
+                : ""}
+                </>
         )
 
 }

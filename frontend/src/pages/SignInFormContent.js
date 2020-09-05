@@ -20,7 +20,7 @@ export const SignInFormContent = (props) => {
             <form onSubmit={handleSubmit}>
                 {/*controlId must match what is passed to the initialValues prop*/}
                 <div className="form-group">
-                    <label htmlFor="signinEmail">Email Address</label>
+                    <label htmlFor="profileEmail">Email Address</label>
                     <div className="input-group">
                         <div className="input-group-prepend">
                             <div className="input-group-text">
@@ -29,9 +29,9 @@ export const SignInFormContent = (props) => {
                         </div>
                         <input
                             className="form-control"
-                            id="signinEmail"
+                            id="profileEmail"
                             type="email"
-                            value={values.signinEmail}
+                            value={values.profileEmail}
                             placeholder="Enter email"
                             onChange={handleChange}
                             onBlur={handleBlur}
@@ -39,9 +39,9 @@ export const SignInFormContent = (props) => {
                         />
                     </div>
                     {
-                        errors.signinEmail && touched.signinEmail && (
+                        errors.profileEmail && touched.profileEmail && (
                             <div className="alert alert-danger">
-                                {errors.signinEmail}
+                                {errors.profileEmail}
                             </div>
                         )
 
@@ -49,7 +49,7 @@ export const SignInFormContent = (props) => {
                 </div>
                 {/*controlId must match what is defined by the initialValues object*/}
                 <div className="form-group">
-                    <label htmlFor="signinPassword">Password</label>
+                    <label htmlFor="profilePassword">Password</label>
                     <div className="input-group">
                         <div className="input-group-prepend">
                             <div className="input-group-text">
@@ -57,17 +57,17 @@ export const SignInFormContent = (props) => {
                             </div>
                         </div>
                         <input
-                            id="signinPassword"
+                            id="profilePassword"
                             className="form-control"
                             type="password"
                             placeholder="Password"
-                            value={values.signinPassword}
+                            value={values.profilePassword}
                             onChange={handleChange}
                             onBlur={handleBlur}
                         />
                     </div>
-                    {errors.signinPassword && touched.signinPassword && (
-                        <div className="alert alert-danger">{errors.signinPassword}</div>
+                    {errors.profilePassword && touched.profilePassword && (
+                        <div className="alert alert-danger">{errors.profilePassword}</div>
                     )}
                 </div>
 
@@ -80,7 +80,7 @@ export const SignInFormContent = (props) => {
                     >Reset
                     </button>
                 </div>
-                <FormDebugger {...props} />
+
             </form>
             {status && (<div className={status.type}>{status.message}</div>)}
         </>
