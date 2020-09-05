@@ -3,20 +3,21 @@ import Card from 'react-bootstrap/Card'
 import Row from 'react-bootstrap/Row'
 import React from 'react'
 import CardColumns from 'react-bootstrap/CardColumns'
+import {Link} from 'react-router-dom'
 
 export const RouteMainCard = (props) => {
   const {route} = props
   return(
     <>
       <Col lg={true} style={{marginBottom: '3rem'}}>
-        <a href="/routePage">
+        <Link to={`/murals/byRouteId/${route?.routeId}`}>
   <Card style={{ width:'30rem' }}>
 <Card.Img variant="top" src={route.routeImageUrl} fluid/>
 <Card.Body>
 <Card.Title className='text-center'>{route.routeName}</Card.Title>
 </Card.Body>
 </Card>
-</a>
+        </Link>
 </Col>
     </>
   )

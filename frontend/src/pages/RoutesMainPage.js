@@ -22,11 +22,10 @@ console.table(routes)
 
   return (
     <>
-      <h1 className={"text-center mt-4 mb-5"}>Albuquerque Routes</h1>
+      <h1 className="text-center mt-4 mb-5">Albuquerque Routes</h1>
       <Container>
         <Row>
           {routes.map( route => <RouteMainCard route={route} />)}
-
         </Row>
       </Container>
     </>

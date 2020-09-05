@@ -24,7 +24,7 @@ import {Provider} from 'react-redux'
 const store = configureStore({reducer})
 library.add(faLinkedin);
 
-const Routing = () => (
+const Routing = (store) => (
   <>
     <Provider store={store}>
     <BrowserRouter>
@@ -33,7 +33,7 @@ const Routing = () => (
         <Route exact path="/sign-in" component={SignInPage} />
         <Route exact path="/muralsPage" component={MuralsPage} />
         <Route exact path="/routesMainPage" component={RoutesMainPage} />
-        <Route exact path="/routePage/:routeId" component={RoutePage} routeId=":routeId" />
+        <Route exact path="/murals/byRouteId/:routeId" component={RoutePage} routeId=":routeId" />
         <Route exact path="/contactPage" component={ContactPage} />
         <Route exact path="/logInPage" component={LogInPage} />
         <Route exact path="/profilePage" component={ProfilePage} />
@@ -45,4 +45,4 @@ const Routing = () => (
   </Provider>
     </>
 );
-ReactDOM.render(<Routing/>, document.querySelector('#root'));
+ReactDOM.render(Routing(store), document.querySelector('#root'));

@@ -6,7 +6,6 @@ import {Request, Response} from 'express';
 import {Status} from '../../utils/interfaces/Status';
 import {Profile} from "../../utils/interfaces/Profile";
 import {Like} from "../../utils/interfaces/Like";
-import {selectLike} from "../../utils/like/selectLike";
 import {deleteLike} from "../../utils/like/deleteLike";
 import {insertLike} from "../../utils/like/insertLike";
 
