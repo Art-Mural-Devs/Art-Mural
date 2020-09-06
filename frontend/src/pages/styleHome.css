@@ -50,13 +50,18 @@
 .mapMain-section {
     margin: 5rem 0 0;
 }
+.mapMain-section h2 {
+    margin: 0 0 4rem;
+}
 .image-map {
     width: 100%;
     height: 20vw;
     object-fit: cover;
 }
+
 .map-icon {
     font-size: 2rem;
+    color: #17A2B8;
 }
 
 
@@ -73,9 +78,17 @@
 
 /*****Section images-Main ******/
 .image-random {
-    margin: 15rem 0;
+    margin: 5rem 0 10rem;
 }
-
+.image-random h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+.image-random p {
+    text-align: center;
+    font-size: 18px;
+    margin-top: 1rem;
+}
 .image-random img {
     width: 95%;
     transition: transform 0.5s;
@@ -128,20 +141,28 @@
         margin: 0;
     }
 
-    .mapMain-section .display-4 {
-        font-size: 2.5rem;
-        margin: 0;
+    .mapMain-section .display-4, .imageSection .display-4{
+        font-size: 2rem;
+        text-align: center;
+        margin: 2rem 0;
         padding: 0;
     }
 
-    .mapMain-section #mapImage {
-        width: 95%;
+    .mapMain-section {
         text-align: center;
-        padding: 1rem 0 0 1rem;
+        margin: 2rem 0 0 ;
     }
-
+    .text-mainPage {
+        margin-top: 5rem;
+    }
+    .text-mainPage p {
+        font-size: 18px;
+    }
     .imageSection .image-random {
-        margin: 5rem 0;
+        margin: 2rem 0;
     }
-
+    .image-random img {
+        width: 95%;
+        height: 45vw;
+    }
 }

@@ -1,23 +1,21 @@
-import React, {useState} from "react"
+import React from "react"
 import { useDispatch, useSelector } from 'react-redux'
-import ReactMapboxGl, {Layer, Feature, Marker, Popup} from "react-mapbox-gl";
+import ReactMapboxGl from "react-mapbox-gl";
 import './styleHome.css'
 import Button from 'react-bootstrap/Button'
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Image from 'react-bootstrap/Image'
-import {library} from '@fortawesome/fontawesome-svg-core'
-import { faMapMarker} from "@fortawesome/free-solid-svg-icons";
-import {MapFeature} from "../ui/MapFeature";
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { faMapMarkerAlt } from "@fortawesome/free-solid-svg-icons";
+import { MapFeature } from "../ui/MapFeature";
 import { fetchMuralByMostLiked } from '../store/murals'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import Nav from 'react-bootstrap/Nav'
 
-
-library.add(faMapMarker);
+library.add(faMapMarkerAlt);
 
 export const Home = () => {
-  const [index, setIndex] = useState(0);
   const dispatch = useDispatch()
   const sideEffects = () => {
     dispatch(fetchMuralByMostLiked())
@@ -25,7 +23,7 @@ export const Home = () => {
   React.useEffect(sideEffects, [])
   const murals = useSelector(state => state.murals ? state.murals : []);
 
-   const murals0 = useSelector(state => (
+  const murals0 = useSelector(state => (
     state.murals
       ? state.murals[0]
       : null
@@ -41,12 +39,9 @@ export const Home = () => {
       : null
   ));
 
-
-
   const Map = ReactMapboxGl({
     accessToken: "pk.eyJ1IjoiZ2Vvcmdla2VwaGFydCIsImEiOiJjanQ4cmdmYjkwYnZnNDNwNDF4NXFiMTJmIn0.MwDDiyszR0QFmMYMNvzi1Q"
   });
-
 
   return (
     <>
@@ -97,26 +92,25 @@ export const Home = () => {
         </Container>
         <Container>
           <Row>
-            <Col>
+            <Col className="ml-4">
               <Map
                 style="mapbox://styles/mapbox/streets-v9"
                 containerStyle={{
                   height: "85vh",
-                  width: "75vw"}}
-                center={[-106.66871, 35.09810]}
+                  width: "75vw"
+                }}
+                center={[-106.6, 35.09810]}
                 zoom={[11.5]}
               >
-
-                  {murals.map(mural => (
-                      <MapFeature mural={mural}/>
-                    )
-                  )};
+                {murals.map(mural => (
+                    <MapFeature mural={mural}/>
+                  )
+                )};
               </Map>
             </Col>
           </Row>
         </Container>
       </section>
-
       <section className="text-mainPage bg-info">
         <Container>
           <Row>
@@ -135,15 +129,28 @@ export const Home = () => {
       <section className="imageSection">
         <Container fluid className="image-random">
           <Row>
-            <Col className="pl-4 pr-0 py-3" sm={4}>
-              {murals0 && ( <Image src={murals0.muralImageUrl}/>)}
+            <Col>
+              <h2 className="display-4 text-center">The Most Voted Murals</h2>
             </Col>
-            <Col className="pl-4 pr-0 py-3" sm={4}>
-              {murals1 && ( <Image src={murals1.muralImageUrl}/>)}
-            </Col><Col className="pl-4 pr-0 py-3" sm={4}>
-            {murals2 && ( <Image src={murals2.muralImageUrl}/>)}
+          </Row>
+          <Row>
+            <Col className="pl-3 pr-0 py-3" sm={4}>
+              <Nav.Link href="/muralsPage">
+                {murals0 && (<Image src={murals0.muralImageUrl}/>)}
+                {murals0 && (<p>Voted By: {murals0.mostLiked}</p>)}
+              </Nav.Link>
+            </Col>
+            <Col className="pl-3 pr-0 py-3" sm={4}>
+              <Nav.Link href="/muralsPage">
+                {murals1 && (<Image src={murals1.muralImageUrl}/>)}
+                {murals1 && (<p>Voted By: {murals1.mostLiked}</p>)}
+              </Nav.Link>
+            </Col><Col className="pl-3 pr-0 py-3" sm={4}>
+            <Nav.Link href="/muralsPage">
+              {murals2 && (<Image src={murals2.muralImageUrl}/>)}
+              {murals2 && (<p>Voted By: {murals2.mostLiked}</p>)}
+            </Nav.Link>
           </Col>
-
           </Row>
         </Container>
       </section>
