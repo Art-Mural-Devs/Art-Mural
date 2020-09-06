@@ -1,28 +1,31 @@
-import React, { useEffect } from "react"
+import React, {useState} from "react"
 import { useDispatch, useSelector } from 'react-redux'
+import ReactMapboxGl, {Layer, Feature, Marker, Popup} from "react-mapbox-gl";
 import './styleHome.css'
 import Button from 'react-bootstrap/Button'
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
-import map from "../shared/images/mapMural.png"
-import randomImage from "../shared/images/albuquerque_mural_0001_Layer-70.jpg"
 import Image from 'react-bootstrap/Image'
-
+import {library} from '@fortawesome/fontawesome-svg-core'
+import { faMapMarker} from "@fortawesome/free-solid-svg-icons";
+import {MapFeature} from "../ui/MapFeature";
 import { fetchMuralByMostLiked } from '../store/murals'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 
+library.add(faMapMarker);
 
 export const Home = () => {
-
+  const [index, setIndex] = useState(0);
   const dispatch = useDispatch()
   const sideEffects = () => {
     dispatch(fetchMuralByMostLiked())
   }
   React.useEffect(sideEffects, [])
+  const murals = useSelector(state => state.murals ? state.murals : []);
 
-
-  const murals0 = useSelector(state => (
+   const murals0 = useSelector(state => (
     state.murals
       ? state.murals[0]
       : null
@@ -39,7 +42,12 @@ export const Home = () => {
   ));
 
 
-console.log(murals0, murals1, murals2 )
+
+  const Map = ReactMapboxGl({
+    accessToken: "pk.eyJ1IjoiZ2Vvcmdla2VwaGFydCIsImEiOiJjanQ4cmdmYjkwYnZnNDNwNDF4NXFiMTJmIn0.MwDDiyszR0QFmMYMNvzi1Q"
+  });
+
+
   return (
     <>
       <header>
@@ -87,10 +95,23 @@ console.log(murals0, murals1, murals2 )
             </Col>
           </Row>
         </Container>
-        <Container fluid>
+        <Container>
           <Row>
             <Col>
-              <Image id="mapImage" src={map} alt="Map image"/>
+              <Map
+                style="mapbox://styles/mapbox/streets-v9"
+                containerStyle={{
+                  height: "85vh",
+                  width: "75vw"}}
+                center={[-106.66871, 35.09810]}
+                zoom={[11.5]}
+              >
+
+                  {murals.map(mural => (
+                      <MapFeature mural={mural}/>
+                    )
+                  )};
+              </Map>
             </Col>
           </Row>
         </Container>
@@ -112,18 +133,18 @@ console.log(murals0, murals1, murals2 )
       </section>
 
       <section className="imageSection">
-            <Container fluid className="image-random">
-              <Row>
-                <Col className="pl-4 pr-0 py-3" sm={4}>
-                  {murals0 && ( <Image src={murals0.muralImageUrl}/>)}
-                </Col>
-                <Col className="pl-4 pr-0 py-3" sm={4}>
-                  {murals1 && ( <Image src={murals1.muralImageUrl}/>)}
-                </Col><Col className="pl-4 pr-0 py-3" sm={4}>
-                {murals2 && ( <Image src={murals2.muralImageUrl}/>)}
-              </Col>
+        <Container fluid className="image-random">
+          <Row>
+            <Col className="pl-4 pr-0 py-3" sm={4}>
+              {murals0 && ( <Image src={murals0.muralImageUrl}/>)}
+            </Col>
+            <Col className="pl-4 pr-0 py-3" sm={4}>
+              {murals1 && ( <Image src={murals1.muralImageUrl}/>)}
+            </Col><Col className="pl-4 pr-0 py-3" sm={4}>
+            {murals2 && ( <Image src={murals2.muralImageUrl}/>)}
+          </Col>
 
-            </Row>
+          </Row>
         </Container>
       </section>
     </>

@@ -50,13 +50,15 @@
 .mapMain-section {
     margin: 5rem 0 0;
 }
-
-#mapImage {
-    width: 95%;
-    text-align: center;
-    padding-left: 3rem;
-    margin: 3rem 0;
+.image-map {
+    width: 100%;
+    height: 20vw;
+    object-fit: cover;
 }
+.map-icon {
+    font-size: 2rem;
+}
+
 
 /*****Section text-Main ******/
 .text-mainPage {
