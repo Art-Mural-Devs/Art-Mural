@@ -92,7 +92,7 @@ export const Home = () => {
         </Container>
         <Container>
           <Row>
-            <Col className="ml-4">
+            <Col className="ml-4 pl-4">
               <Map
                 style="mapbox://styles/mapbox/streets-v9"
                 containerStyle={{
