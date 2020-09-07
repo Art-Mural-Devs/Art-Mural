@@ -92,7 +92,7 @@ export const Home = () => {
         </Container>
         <Container className="map">
           <Row>
-            <Col className="ml-4 pl-4">
+            <Col>
               <Map
                 style="mapbox://styles/mapbox/streets-v9"
                 containerStyle={{
@@ -130,27 +130,29 @@ export const Home = () => {
         <Container fluid className="image-random">
           <Row>
             <Col>
-              <h2 className="display-4 text-center">The Most Voted Murals</h2>
+              <h2 className="display-4 text-center">The Most Liked Murals</h2>
             </Col>
           </Row>
           <Row>
             <Col className="pl-3 pr-0 py-3" sm={4}>
-              <Nav.Link href="/muralsPage">
                 {murals0 && (<Image src={murals0.muralImageUrl}/>)}
                 {murals0 && (<p>Voted By: {murals0.mostLiked}</p>)}
-              </Nav.Link>
             </Col>
             <Col className="pl-3 pr-0 py-3" sm={4}>
-              <Nav.Link href="/muralsPage">
                 {murals1 && (<Image src={murals1.muralImageUrl}/>)}
                 {murals1 && (<p>Voted By: {murals1.mostLiked}</p>)}
-              </Nav.Link>
-            </Col><Col className="pl-3 pr-0 py-3" sm={4}>
-            <Nav.Link href="/muralsPage">
+            </Col>
+            <Col className="pl-3 pr-0 py-3" sm={4}>
               {murals2 && (<Image src={murals2.muralImageUrl}/>)}
               {murals2 && (<p>Voted By: {murals2.mostLiked}</p>)}
-            </Nav.Link>
           </Col>
+          </Row>
+          <Row className="justify-content-md-center">
+            <Col md={4} className="btn-image">
+              <Nav.Link href="/muralsPage">
+              <Button variant="info" size="lg" block>Click like to your favorite Mural</Button>
+              </Nav.Link>
+            </Col>
           </Row>
         </Container>
       </section>

@@ -19,22 +19,7 @@ export const MapFeature = ({mural}) => {
         anchor="bottom"
       >
         <FontAwesomeIcon className="map-icon" icon="map-marker-alt" size="lg" onClick={handleShow}/>
-        <Modal show={show} onHide={handleClose}>
-          <Modal.Header closeButton>
-            <Modal.Title>{mural.muralTitle}</Modal.Title>
-          </Modal.Header>
-          <Modal.Body>
-              <img className="image-map" src={mural.muralImageUrl} alt={mural.muralTitle}/>
-              <p><b>Artist: </b>{mural.muralArtist}</p>
-              <p><b>Year: </b>{mural.muralArtist}</p>
-              <p><b>Address: </b>{mural.muralAddress}</p>
-          </Modal.Body>
-          <Modal.Footer>
-            <Button variant="secondary" onClick={handleClose}>
-              Close
-            </Button>
-          </Modal.Footer>
-        </Modal>
+
       </Marker>
     </>
   )
