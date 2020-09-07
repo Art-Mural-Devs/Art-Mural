@@ -65,7 +65,7 @@ export const Home = () => {
             </Row>
             <Row className="mt-4 px-5">
               <Col className="text-center">
-                <Button variant="outline-info text-white" size="lg" block>Route 3</Button>{' '}
+                    <Button variant="outline-info text-white" size="lg" block>Route 3</Button>{' '}
               </Col>
               <Col className="text-center ">
                 <Button variant="outline-info text-white" size="lg" block>Route 4</Button>{' '}
@@ -90,7 +90,7 @@ export const Home = () => {
             </Col>
           </Row>
         </Container>
-        <Container>
+        <Container className="map">
           <Row>
             <Col className="ml-4 pl-4">
               <Map
