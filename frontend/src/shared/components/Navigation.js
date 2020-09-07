@@ -11,7 +11,8 @@ export const Navigation = () => {
           <Navbar.Collapse id="responsive-navbar-nav" className="justify-content-end">
             <Nav className="px-1 pr-5 ">
               <Nav.Link href="/">Home</Nav.Link>
-
+              <Nav.Link href="/profileDetails">Profile</Nav.Link>
+              <Nav.Link href="/muralsPage">Murals</Nav.Link>
               <Nav.Link href="/routesMainPage">Routes</Nav.Link>
               <Nav.Link href="/contactPage">Contact</Nav.Link>
               {localStorage.getItem('authUser') && localStorage.getItem('authUser').length> 0  ? <p style={{color:'white',paddingTop:'10px', paddingLeft:'10px'}} onClick={() =>{localStorage.setItem("authUser",'')}}>Log out</p> : <Nav.Link href="/logInPage">Log in</Nav.Link>}
