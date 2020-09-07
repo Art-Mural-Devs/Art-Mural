@@ -38,6 +38,7 @@ export async function insertRouteController(request: Request, response: Response
             routeNeighbourhoodLat,
             routeNeighbourhoodLong,
         }
+        console.log(route)
         const result = await insertRoutes(route)
         const status: Status = {
             status: 200,

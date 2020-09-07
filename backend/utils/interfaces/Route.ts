@@ -1,5 +1,5 @@
 export interface Route {
-    routeId: string,
+    routeId: string | null,
     routeContent: string,
     routeImageUrl: string,
     routeName: string,
