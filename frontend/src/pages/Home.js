@@ -1,4 +1,4 @@
-import React, { useEffect } from "react"
+// import React, { useEffect } from "react"
 import { useDispatch, useSelector } from 'react-redux'
 import './styleHome.css'
 import Button from 'react-bootstrap/Button'
@@ -6,7 +6,7 @@ import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import map from "../shared/images/mapMural.png"
-import randomImage from "../shared/images/albuquerque_mural_0001_Layer-70.jpg"
+// import randomImage from "../shared/images/albuquerque_mural_0001_Layer-70.jpg"
 import Image from 'react-bootstrap/Image'
 
 import { fetchMuralByMostLiked } from '../store/murals'

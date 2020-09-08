@@ -1,9 +1,8 @@
 import React from 'react'
-import { useSelector } from 'react-redux'
+// import { useSelector } from 'react-redux'
 import Col from 'react-bootstrap/Col'
 import Card from 'react-bootstrap/Card'
-import Button from 'react-bootstrap/Button'
-import Row from 'react-bootstrap/Row'
+import LikeButton from './LikeButton'
 
 export const MuralCard = ({ mural }) => {
 
@@ -11,7 +10,7 @@ export const MuralCard = ({ mural }) => {
     <Col lg={true} style={{marginBottom: '2rem', alignItems: 'center'}}>
       <Card style={{ width:'18rem' }}>
         <Card.Img variant="top" src= { mural.muralImageUrl} alt={mural.muralTitle} fluid/>
-        <Card.Header className="text-center"><Button style={{background:"#17a2b8"}}>Like</Button></Card.Header>
+        <Card.Header className="text-center"><LikeButton /></Card.Header>
         <Card.Body className="card-body">
           <Card.Title>{ mural.muralTitle}</Card.Title>
           <Card.Text>
@@ -28,3 +27,5 @@ export const MuralCard = ({ mural }) => {
     </Col>
   )
 }
+
+// <Button style={{background:"#17a2b8"}}>Like</Button>
