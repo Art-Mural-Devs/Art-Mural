@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import {getAllMuralsController, getMuralsOrderedByMostLikedController} from '../controllers/mural.controller';
+import {getAllMuralsController, getMuralsOrderedByMostLikedController, getMuralsOrderedByCreationYearController, getMuralsOrderedByMuralArtistController, getMuralsOrderedByMuralTitleController} from '../controllers/mural.controller';
 
 
 const router = Router();
@@ -9,4 +9,7 @@ const router = Router();
 router.route("/bylikes").get(getMuralsOrderedByMostLikedController)
 router.route("/:orderBy").get(getAllMuralsController)
 router.route("/").get(getAllMuralsController)
+router.route("/byyear").get(getMuralsOrderedByCreationYearController)
+router.route("/byartist").get(getMuralsOrderedByMuralArtistController)
+router.route("/bytitle").get(getMuralsOrderedByMuralTitleController)
 export default router;

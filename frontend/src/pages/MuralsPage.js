@@ -33,7 +33,7 @@ export const MuralsPage = () => {
           <Button size="lg" style={{background:"#17a2b8"}}>Most Liked</Button>{' '}
           <Button size="lg" style={{background:"#17a2b8"}}>Mural Name (A-Z)</Button>{' '}
           <Button size="lg" style={{background:"#17a2b8"}}>Year (newest)</Button>{' '}
-          <Button size="lg" style={{background:"#17a2b8"}}>Author (A-Z)</Button>{' '}
+          <Button size="lg" style={{background:"#17a2b8"}}>Artist (A-Z)</Button>{' '}
         </Row>
       </Container>
       <Container className="card-columns">
