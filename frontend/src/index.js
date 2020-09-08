@@ -10,7 +10,7 @@ import {RoutesMainPage} from "./pages/RoutesMainPage"
 import {RoutePage} from "./pages/RoutePage"
 import {ProfileDetails} from "./pages/ProfileDetails"
 import ContactPage from "./pages/ContactPage"
-// import {LogInPage} from "./pages/LogInPage"
+import {LogInPage} from "./pages/LogInPage"
 import ConfirmEmail from "./pages/ConfirmEmail"
 import {ProfilePage} from "./pages/ProfilePage"
 import { library } from "@fortawesome/fontawesome-svg-core"
@@ -21,15 +21,16 @@ import "./pages/styleHome.css"
 import { configureStore } from '@reduxjs/toolkit'
 import reducer from './store'
 import {Provider} from "react-redux";
+import { faDove, faEnvelope, faKey, faUser } from '@fortawesome/free-solid-svg-icons'
+
 //In order to use redux a store must be initialized and passed to the Provider component.
 const store = configureStore({reducer})
 
-library.add(faLinkedin);
+library.add(faLinkedin, faEnvelope,faKey, faDove, faUser);
 
 const Routing = (store) => (
   <>
     <Provider store={store}>
-
       <BrowserRouter>
       <Navigation/>
       <Switch>

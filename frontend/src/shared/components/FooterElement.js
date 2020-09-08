@@ -21,7 +21,6 @@ export const FooterElement = () => {
                   <p className="name"> Alison C Maez
                     <FontAwesomeIcon id="linkedInIcon" icon={["fab", "linkedin"]}/></p>
                 </a>
-
               </Col>
               <Col sm={12}>
                 <a href="https://www.linkedin.com/in/andrei-hristian-a673551b3/" target="_blank">

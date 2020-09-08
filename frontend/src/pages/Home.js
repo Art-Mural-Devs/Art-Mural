@@ -1,26 +1,27 @@
-// import React, { useEffect } from "react"
+import React from "react"
 import { useDispatch, useSelector } from 'react-redux'
+import ReactMapboxGl from "react-mapbox-gl";
 import './styleHome.css'
 import Button from 'react-bootstrap/Button'
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
-import map from "../shared/images/mapMural.png"
-// import randomImage from "../shared/images/albuquerque_mural_0001_Layer-70.jpg"
 import Image from 'react-bootstrap/Image'
-
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { faMapMarkerAlt } from "@fortawesome/free-solid-svg-icons";
+import { MapFeature } from "../ui/MapFeature";
 import { fetchMuralByMostLiked } from '../store/murals'
+import Nav from 'react-bootstrap/Nav'
 
-
+library.add(faMapMarkerAlt);
 
 export const Home = () => {
-
   const dispatch = useDispatch()
   const sideEffects = () => {
     dispatch(fetchMuralByMostLiked())
   }
   React.useEffect(sideEffects, [])
-
+  const murals = useSelector(state => state.murals ? state.murals : []);
 
   const murals0 = useSelector(state => (
     state.murals
@@ -38,8 +39,10 @@ export const Home = () => {
       : null
   ));
 
+  const Map = ReactMapboxGl({
+    accessToken: "pk.eyJ1IjoiZ2Vvcmdla2VwaGFydCIsImEiOiJjanQ4cmdmYjkwYnZnNDNwNDF4NXFiMTJmIn0.MwDDiyszR0QFmMYMNvzi1Q"
+  });
 
-console.log(murals0, murals1, murals2 )
   return (
     <>
       <header>
@@ -62,7 +65,7 @@ console.log(murals0, murals1, murals2 )
             </Row>
             <Row className="mt-4 px-5">
               <Col className="text-center">
-                <Button variant="outline-info text-white" size="lg" block>Route 3</Button>{' '}
+                    <Button variant="outline-info text-white" size="lg" block>Route 3</Button>{' '}
               </Col>
               <Col className="text-center ">
                 <Button variant="outline-info text-white" size="lg" block>Route 4</Button>{' '}
@@ -87,15 +90,27 @@ console.log(murals0, murals1, murals2 )
             </Col>
           </Row>
         </Container>
-        <Container fluid>
+        <Container className="map">
           <Row>
             <Col>
-              <Image id="mapImage" src={map} alt="Map image"/>
+              <Map
+                style="mapbox://styles/mapbox/streets-v9"
+                containerStyle={{
+                  height: "85vh",
+                  width: "75vw"
+                }}
+                center={[-106.6, 35.09810]}
+                zoom={[11.5]}
+              >
+                {murals.map(mural => (
+                    <MapFeature mural={mural}/>
+                  )
+                )};
+              </Map>
             </Col>
           </Row>
         </Container>
       </section>
-
       <section className="text-mainPage bg-info">
         <Container>
           <Row>
@@ -112,18 +127,33 @@ console.log(murals0, murals1, murals2 )
       </section>
 
       <section className="imageSection">
-            <Container fluid className="image-random">
-              <Row>
-                <Col className="pl-4 pr-0 py-3" sm={4}>
-                  {murals0 && ( <Image src={murals0.muralImageUrl}/>)}
-                </Col>
-                <Col className="pl-4 pr-0 py-3" sm={4}>
-                  {murals1 && ( <Image src={murals1.muralImageUrl}/>)}
-                </Col><Col className="pl-4 pr-0 py-3" sm={4}>
-                {murals2 && ( <Image src={murals2.muralImageUrl}/>)}
-              </Col>
-
-            </Row>
+        <Container fluid className="image-random">
+          <Row>
+            <Col>
+              <h2 className="display-4 text-center">The Most Liked Murals</h2>
+            </Col>
+          </Row>
+          <Row>
+            <Col className="pl-3 pr-0 py-3" sm={4}>
+                {murals0 && (<Image src={murals0.muralImageUrl}/>)}
+                {murals0 && (<p>Voted By: {murals0.mostLiked}</p>)}
+            </Col>
+            <Col className="pl-3 pr-0 py-3" sm={4}>
+                {murals1 && (<Image src={murals1.muralImageUrl}/>)}
+                {murals1 && (<p>Voted By: {murals1.mostLiked}</p>)}
+            </Col>
+            <Col className="pl-3 pr-0 py-3" sm={4}>
+              {murals2 && (<Image src={murals2.muralImageUrl}/>)}
+              {murals2 && (<p>Voted By: {murals2.mostLiked}</p>)}
+          </Col>
+          </Row>
+          <Row className="justify-content-md-center">
+            <Col md={4} className="btn-image">
+              <Nav.Link href="/muralsPage">
+              <Button variant="info" size="lg" block>Click like to your favorite Mural</Button>
+              </Nav.Link>
+            </Col>
+          </Row>
         </Container>
       </section>
     </>
