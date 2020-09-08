@@ -35,7 +35,7 @@ export const RoutePage = ({match}) => {
         <Container>
           <Row>
             <Col>
-              {routes && (<h2>{routes[0]?.routeName}</h2>)}
+              {routes && (<h2 className="display-4 text-center">{routes[0]?.routeName}</h2>)}
             </Col>
           </Row>
         </Container>
