@@ -6,6 +6,8 @@ import IndexRoutes from './routes/index.routes';
 import {SignOutRoute} from "./routes/sign-out.route";
 import morgan from 'morgan';
 import bodyParser from 'body-parser';
+import RouteRoute from './routes/route.routes';
+
 
 // Routes
 
@@ -67,15 +69,13 @@ export class App {
         this.app.use('/apis/murals/year', MuralRoute)
         this.app.use('/apis/murals/artist', MuralRoute)
         this.app.use('/apis/murals/title', MuralRoute)
-
         this.app.use('/apis/sign-up', signupRoutes)
-        // this.app.use('/apis/auth',Basicauth)
-
         this.app.use('/apis/sign-in', SignInRouter);
         this.app.use('/apis/sign-out', SignOutRoute);
-        this.app.use('/apis/sign-up', SignupRoute);
         this.app.use('/apis/like', LikeRoute);
         this.app.use('/apis/profile', ProfileRoute);
+        this.app.use('/apis/routes', RouteRoute);
+
 
     }
 

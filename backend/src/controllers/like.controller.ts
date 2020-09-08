@@ -1,18 +1,16 @@
-
 import {Request, Response} from 'express';
 import {Status} from '../../utils/interfaces/Status';
 import {Profile} from "../../utils/interfaces/Profile";
 import {Like} from "../../utils/interfaces/Like";
-import {selectLike} from "../../utils/like/selectLike";
 import {deleteLike} from "../../utils/like/deleteLike";
 import {insertLike} from "../../utils/like/insertLike";
+import {selectLike} from "../../utils/like/selectLike";
 
 const {validationResult} = require('express-validator');
 
 export async function toggleLikeController(request: Request, response: Response) {
 
     try {
-        validationResult(request).throw();
 console.log(request)
         const {likeMuralId} = request.body;
         const profile: Profile = request.session?.profile
