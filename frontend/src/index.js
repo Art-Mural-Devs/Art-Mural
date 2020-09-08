@@ -36,6 +36,7 @@ const Routing = (store) => (
       <Switch>
         <Route exact path="/profileDetails" component={ProfileDetails} />
         <Route exact path="/murals" component={MuralsPage} />
+        <Route exact path="/profileDetails" component={ProfileDetails} />
         <Route exact path="/routesMainPage" component={RoutesMainPage} />
         <Route exact path="/routePage" component={RoutePage} />
         <Route exact path="/contactPage" component={ContactPage} />

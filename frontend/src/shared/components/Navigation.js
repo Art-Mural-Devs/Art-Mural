@@ -11,7 +11,6 @@ export const Navigation = () => {
           <Navbar.Collapse id="responsive-navbar-nav" className="justify-content-end">
             <Nav className="px-1 pr-5 ">
               <Nav.Link href="/">Home</Nav.Link>
-              <Nav.Link href="/profileDetails">Profile</Nav.Link>
               <Nav.Link href="/murals">Murals</Nav.Link>
               <Nav.Link href="/routesMainPage">Routes</Nav.Link>
               <Nav.Link href="/contactPage">Contact</Nav.Link>
