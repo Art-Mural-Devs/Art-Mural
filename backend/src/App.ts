@@ -6,6 +6,12 @@ import IndexRoutes from './routes/index.routes';
 import {SignOutRoute} from "./routes/sign-out.route";
 import morgan from 'morgan';
 import bodyParser from 'body-parser';
+
+// Routes
+
+import signupRoutes from './routes/sign-up.route'
+// import Basicauth from './routes/basic-authentication'
+
 import { SignInRouter } from './routes/sign-in.route';
 import { passportMiddleware } from './lib/auth.controller';
 const session = require("express-session");
@@ -13,6 +19,7 @@ import passport = require('passport');
 const MemoryStore = require('memorystore')(session);
 import csrf from "csurf";
 import {ProfileRoute} from "./routes/profile.route";
+
 
 export class App {
     app: Application;
@@ -57,11 +64,19 @@ export class App {
     private routes () {
         this.app.use('/apis',IndexRoutes);
         this.app.use('/apis/murals', MuralRoute);
+        this.app.use('/apis/murals/year', MuralRoute)
+        this.app.use('/apis/murals/artist', MuralRoute)
+        this.app.use('/apis/murals/title', MuralRoute)
+
+        this.app.use('/apis/sign-up', signupRoutes)
+        // this.app.use('/apis/auth',Basicauth)
+
         this.app.use('/apis/sign-in', SignInRouter);
         this.app.use('/apis/sign-out', SignOutRoute);
         this.app.use('/apis/sign-up', SignupRoute);
         this.app.use('/apis/like', LikeRoute);
         this.app.use('/apis/profile', ProfileRoute);
+
     }
 
     // starts the server and tells the terminal to post a message that the server is running and on what port

@@ -8,8 +8,10 @@ const muralsSlice = createSlice({
     getAllMurals: (murals, action) => {
       return action.payload
     },
+
     getMuralByMostLiked: (murals, action) => {
       return action.payload
+
     }
   }
 })
