@@ -4,8 +4,9 @@ import Col from 'react-bootstrap/Col'
 import Card from 'react-bootstrap/Card'
 // import LikeButton from './LikeButton'
 import { useDispatch } from 'react-redux'
-import { httpConfig } from '../../shared/utils/http-config'
+import { httpConfig } from '../../utils/http-config'
 import { getAllMurals } from '../../store/murals'
+import Button from 'react-bootstrap/Button'
 
 export const MuralCard = ({ mural }) => {
   const dispatch = useDispatch()
