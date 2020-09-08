@@ -149,7 +149,7 @@ export const Home = () => {
           </Row>
           <Row className="justify-content-md-center">
             <Col md={4} className="btn-image">
-              <Nav.Link href="/muralsPage">
+              <Nav.Link href="/murals">
               <Button variant="info" size="lg" block>Click like to your favorite Mural</Button>
               </Nav.Link>
             </Col>
