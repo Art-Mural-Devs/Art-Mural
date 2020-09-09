@@ -3,4 +3,5 @@ import murals from "./murals";
 import profile from "./profile";
 import  routes from "./route"
 import muralRoutes from "./muralRoute"
-export default combineReducers({routes, muralRoutes, murals, profile})
+import auth from "./auth"
+export default combineReducers({routes, muralRoutes, murals, profile, auth})
