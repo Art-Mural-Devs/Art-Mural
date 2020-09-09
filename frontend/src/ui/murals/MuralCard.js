@@ -29,7 +29,7 @@ export const MuralCard = ({ mural }) => {
       <Card style={{ width:'18rem' }}>
         <Card.Img variant="top" src= { mural.muralImageUrl} alt={mural.muralTitle} fluid/>
         <Card.Header className="text-center"><Button onClick={clickLike} style={{background:"#17a2b8"}}>Like</Button></Card.Header>
-        <Card.Body className="card-body">
+        <Card.Body className="card-mural">
           <Card.Title>{ mural.muralTitle}</Card.Title>
           <Card.Text>
             { mural.muralArtist}

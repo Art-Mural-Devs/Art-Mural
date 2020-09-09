@@ -14,7 +14,7 @@ export const RouteMainCard = (props) => {
   <Card style={{ width:'30rem' }}>
 <Card.Img variant="top" src={route.routeImageUrl} fluid/>
 <Card.Body>
-<Card.Title className='text-center'>{route.routeName}</Card.Title>
+<Card.Title className="mainCardText">{route.routeName}</Card.Title>
 </Card.Body>
 </Card>
         </Link>
