@@ -36,7 +36,7 @@ export const FooterElement = () => {
                 </a>
               </Col>
               <Col sm={12}>
-                <a href="#" target="_blank">
+                <a href="https://www.linkedin.com/in/josh-duffy-b636aaaa/" target="_blank">
                   <p className="name"> Josh Duffy
                     <FontAwesomeIcon id="linkedInIcon" icon={["fab", "linkedin"]}/></p>
                 </a>

@@ -1,5 +1,4 @@
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {FormDebugger} from "../shared/components/FormDebugger";
 import React from "react";
 import './updateForm.css'
 export const UpdateProfileContent = (props) => {

@@ -7,13 +7,12 @@ import Col from 'react-bootstrap/Col'
 import { fetchMuralRouteById } from '../store/muralRoute'
 import { useDispatch, useSelector } from 'react-redux'
 import { fetchAllRoutes } from '../store/route'
-import { RouteMainCard } from '../shared/components/routeMainCard'
 // import { MapFeature } from '../ui/MapFeature'
 // import ReactMapboxGl from 'react-mapbox-gl'
 
 
 export const RoutePage = ({match}) => {
-  const [index, setIndex] = useState(0);
+  const [setIndex] = useState(0);
   const dispatch = useDispatch()
   const effects = () => {
     dispatch(fetchMuralRouteById(match.params.routeId))
