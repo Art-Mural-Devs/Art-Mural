@@ -18,9 +18,6 @@ import { MuralCard } from '../ui/murals/MuralCard'
 export const MuralsPage = () => {
 
   const dispatch = useDispatch();
-
-  console.log(dispatch)
-
   const effects = () => {
     dispatch(fetchAllMurals());
     dispatch(fetchMuralByMostLiked());
@@ -31,7 +28,6 @@ export const MuralsPage = () => {
   useEffect(effects, inputs);
 
   const murals = useSelector(state => (state.murals ? state.murals : []));
-  console.log(murals)
   return (
     <>
       <h1 className={"text-center my-4"}>Albuquerque Murals</h1>

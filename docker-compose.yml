@@ -23,7 +23,14 @@ services:
     volumes:
       - compose-lesson:/var/lib/mysql
     ports:
-      - 33006:3306
+      - 3306:3306
+  app:
+    build: frontend
+    depends_on:
+      - node
+    #    For deploying to server use ports: - 80:80
+    ports:
+      - 80:80
 volumes:
   compose-lesson:
 

@@ -17,26 +17,26 @@ export const FooterElement = () => {
             </Row>
             <Row md={4} className="pt-4">
               <Col sm={12}>
-                <a href="#" target="_blank">
+                <a href="https://www.linkedin.com/in/alison-maez/">
                   <p className="name"> Alison C Maez
                     <FontAwesomeIcon id="linkedInIcon" icon={["fab", "linkedin"]}/></p>
                 </a>
               </Col>
               <Col sm={12}>
-                <a href="https://www.linkedin.com/in/andrei-hristian-a673551b3/" target="_blank">
+                <a href="https://www.linkedin.com/in/andrei-hristian-a673551b3/">
                   <p className="name"> Andrei Hristian
                     <FontAwesomeIcon id="linkedInIcon" icon={["fab", "linkedin"]}/></p>
                 </a>
 
               </Col>
               <Col sm={12}>
-                <a href="#" target="_blank">
+                <a href="https://www.linkedin.com/in/john-jaramillo-5172521b3/">
                   <p className="name"> John Jaramillo
                     <FontAwesomeIcon id="linkedInIcon" icon={["fab", "linkedin"]}/></p>
                 </a>
               </Col>
               <Col sm={12}>
-                <a href="#" target="_blank">
+                <a href="https://www.linkedin.com/in/josh-duffy-b636aaaa/">
                   <p className="name"> Josh Duffy
                     <FontAwesomeIcon id="linkedInIcon" icon={["fab", "linkedin"]}/></p>
                 </a>

@@ -22,7 +22,6 @@ export const fetchProfileByProfileId  = () => async (dispatch, getState)=> {
 
 
     const state = getState()
-    console.log(state)
     if (state.auth!==null){
     const {data} = await httpConfig(`/apis/profile/${state.auth.profileId}`);
     dispatch(getProfileByProfileId(data))

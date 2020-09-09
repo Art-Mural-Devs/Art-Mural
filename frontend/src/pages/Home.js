@@ -65,7 +65,7 @@ export const Home = () => {
           <Container fluid>
             <Row>
               <Col className="quoteMain">
-                <p>The power of Street Art is that it goes to people`s daily life to be seen.</p>
+                <p>"The power of Street Art is that it goes to people`s daily life to be seen."</p>
                 <p>Andrei Hristian</p>
               </Col>
             </Row>
@@ -82,13 +82,12 @@ export const Home = () => {
           </Row>
         </Container>
         <Container className="map text-center">
-          <Row>
-            <Col>
+          <Row className="justify-content-center">
+            <Col md={12}>n
               <Map
                 style="mapbox://styles/mapbox/streets-v9"
                 containerStyle={{
-                  height: "85vh",
-                  width: "75vw"
+                  height: "85vh"
                 }}
                 center={[-106.6, 35.09810]}
                 zoom={[11.5]}

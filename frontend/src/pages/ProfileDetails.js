@@ -2,15 +2,11 @@ import React, {useEffect}  from "react"
 import './style.css'
 import {useSelector, useDispatch} from "react-redux";
 import {fetchProfileByProfileId} from "../store/profile";
-import {fetchAuth} from "../store/auth";
 import {UpdateProfileForm} from "./UpdateProfileForm";
 export const ProfileDetails = ()=> {
 
   const dispatch = useDispatch();
 
-
-    console.log(dispatch)
-    
     const effects = () => {
 
        dispatch(fetchProfileByProfileId ( ))
@@ -22,11 +18,8 @@ export const ProfileDetails = ()=> {
 
   const profile = useSelector(state => {
 
-
     return state.profile ? state.profile : null
     });
-
-
 
         return (
             <>
@@ -59,7 +52,7 @@ export const ProfileDetails = ()=> {
                         </div>
 
                     <div className="row">
-                        {profile && <UpdateProfileForm profile = {profile}/>}
+                        {profile && <UpdateProfileForm key={profile.profileId} profile = {profile}/>}
                     </div>
                     </div>
                 : <h3>Please Log In </h3>}
