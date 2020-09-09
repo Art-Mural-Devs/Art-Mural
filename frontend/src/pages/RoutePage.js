@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react"
+import React, { useEffect } from "react"
 import './styleHome.css'
 import Carousel from 'react-bootstrap/Carousel'
 import Container from 'react-bootstrap/Container'
@@ -12,7 +12,6 @@ import { fetchAllRoutes } from '../store/route'
 
 
 export const RoutePage = ({match}) => {
-  const [setIndex] = useState(0);
   const dispatch = useDispatch()
   const effects = () => {
     dispatch(fetchMuralRouteById(match.params.routeId))
@@ -24,18 +23,14 @@ export const RoutePage = ({match}) => {
       ? state.muralRoutes.filter(muralRoute => muralRoute.muralRouteRouteId === match.params.routeId)
       : []
   });
-  console.log(muralRoutes)
   const routes = useSelector(state => {
     return state.routes? state.routes.filter(route => route.routeId === match.params.routeId)
       : []});
-  const handleSelect = (selectedIndex, e) => {		setIndex(selectedIndex);	};
-  console.log(routes[0]?.routeName)
+
 
   // const Map = ReactMapboxGl({
   //   accessToken: "pk.eyJ1IjoiZ2Vvcmdla2VwaGFydCIsImEiOiJjanQ4cmdmYjkwYnZnNDNwNDF4NXFiMTJmIn0.MwDDiyszR0QFmMYMNvzi1Q"
   // });
-
-  console.log(muralRoutes);
 
   return (
     <>
@@ -50,7 +45,7 @@ export const RoutePage = ({match}) => {
         <Container>
           <Row>
             <Col>
-              {routes && (<img className="routeImage" src={routes[0]?.routeImageUrl}/>)}
+              {routes && (<img className="routeImage" src={routes[0]?.routeImageUrl} alt="routeImage"/>)}
             </Col>
           </Row>
         </Container>

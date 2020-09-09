@@ -6,7 +6,6 @@ export const UpdateProfileContent = (props) => {
         values,
         errors,
         touched,
-        dirty,
         handleChange,
         handleBlur,
         handleSubmit,
