@@ -23,6 +23,7 @@ import reducer from './store'
 import {Provider} from "react-redux";
 import { faDove, faEnvelope, faKey, faUser } from '@fortawesome/free-solid-svg-icons'
 
+
 //In order to use redux a store must be initialized and passed to the Provider component.
 const store = configureStore({reducer})
 

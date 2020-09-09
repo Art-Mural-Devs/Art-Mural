@@ -2,7 +2,7 @@ export const profileValidator = {
     profileId: {
         isUUID: {
             errorMessage: 'please provide a valid profileId'
-        }
+        }, in: ["params", "body"]
     },
     profileContent: {
         escape: true,
@@ -18,22 +18,7 @@ export const profileValidator = {
         },
         trim: true
     },
-    profilePassword: {
-        isLength: {
-            errorMessage: 'Password must be at least eight characters',
-            options: { min: 8 }
-        },
-        trim: true,
-        escape: true
-    },
-    profilePasswordConfirm: {
-        isLength: {
-            errorMessage: 'confirm password must be at least eight characters',
-            options: { min: 8 }
-        },
-        trim: true,
-        escape: true
-    },
+
     profileName: {
         escape: true,
         trim: true,

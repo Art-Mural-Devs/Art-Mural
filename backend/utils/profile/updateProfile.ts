@@ -3,7 +3,7 @@ import {connect} from "../../src/database";
 
 export async function updateProfile(profile: Profile) {
     try {
-
+console.log(profile)
         const mysqlConnection = await connect();
         const query : string = 'UPDATE profile SET  profileContent = :profileContent, profileEmail = :profileEmail, profileHash = :profileHash, profileName = :profileName WHERE profileId = UUID_TO_BIN(:profileId)';
 
