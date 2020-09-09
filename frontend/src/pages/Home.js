@@ -58,7 +58,7 @@ export const Home = () => {
             </Row>
           </Container>
           <Container className="my-5">
-            <Row md={2} className="mt-3 px-5">
+            <Row md={2} className="mt-3 mx-5">
               {routes.map( route => <RouteMainButton key={route.routeId} route={route}/>)}
             </Row>
           </Container>

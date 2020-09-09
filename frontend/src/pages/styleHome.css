@@ -46,7 +46,8 @@
     margin-top: 2rem;
     padding-right: 3rem;
 }
-.main-buttons:hover a{
+
+.main-buttons:hover a {
     text-decoration: none;
 }
 
@@ -144,6 +145,7 @@
 .image-random img:hover {
     transform: scale(1.2);
 }
+
 .btn-image:hover {
     color: white;
 }
@@ -186,6 +188,7 @@
     height: 15vw;
     object-fit: cover;
 }
+
 .card-body {
     height: 15vw;
 }
@@ -194,7 +197,7 @@
 /********** Ipad size *************/
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
     .navbar-dark .navbar-nav .nav-link {
-        font-size: 24px;
+        font-size: 20px;
         color: white;
     }
 
@@ -216,6 +219,7 @@
 
     .map {
         margin: 1rem 0 0 5rem;
+        width: 80%;
     }
 
     .text-mainPage p {
@@ -244,7 +248,8 @@
     }
 
     .map {
-    margin-left: 2rem ;
+        margin-left: 2rem;
+        width: 80%;
     }
 
     .mapMain-section {

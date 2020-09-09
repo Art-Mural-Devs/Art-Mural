@@ -8,7 +8,7 @@ export const RouteMainButton = (props) => {
 
   return (
     <>
-      <Col className="text-center main-buttons">
+      <Col className="text-center main-buttons mt-4">
         <Link to={`/murals/byRouteId/${route?.routeId}`}>
         <Button variant="outline-info text-white" size="lg" block>{route.routeName}</Button>
         </Link>
