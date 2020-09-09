@@ -8,6 +8,8 @@ import { fetchMuralRouteById } from '../store/muralRoute'
 import { useDispatch, useSelector } from 'react-redux'
 import { fetchAllRoutes } from '../store/route'
 import { RouteMainCard } from '../shared/components/routeMainCard'
+// import { MapFeature } from '../ui/MapFeature'
+// import ReactMapboxGl from 'react-mapbox-gl'
 
 
 export const RoutePage = ({match}) => {
@@ -29,6 +31,13 @@ export const RoutePage = ({match}) => {
       : []});
   const handleSelect = (selectedIndex, e) => {		setIndex(selectedIndex);	};
   console.log(routes[0]?.routeName)
+
+  // const Map = ReactMapboxGl({
+  //   accessToken: "pk.eyJ1IjoiZ2Vvcmdla2VwaGFydCIsImEiOiJjanQ4cmdmYjkwYnZnNDNwNDF4NXFiMTJmIn0.MwDDiyszR0QFmMYMNvzi1Q"
+  // });
+
+  console.log(muralRoutes);
+
   return (
     <>
       <section className="mapMain-section">
@@ -39,10 +48,10 @@ export const RoutePage = ({match}) => {
             </Col>
           </Row>
         </Container>
-        <Container fluid>
+        <Container>
           <Row>
             <Col>
-              {routes && (<img src={routes[0]?.routeImageUrl}/>)}
+              {routes && (<img className="routeImage" src={routes[0]?.routeImageUrl}/>)}
             </Col>
           </Row>
         </Container>
@@ -54,17 +63,17 @@ export const RoutePage = ({match}) => {
               {routes && (<p>{routes[0]?.routeContent}</p>)}
             </Col>
           </Row>
+          <hr></hr>
         </Container>
 
       <section className="my-5">
         <Container>
-          <Row>
-            <Col>
-              <hr></hr>
-              <Carousel className="py-5">
+          <Row className="justify-content-center">
+            <Col md={8}>
+              <Carousel className="Carousel" >
                 {muralRoutes.map(muralRoute => {return (
                   <Carousel.Item>
-                  <img className="d-block w-100"
+                  <img className="carouselImage"
                   src={muralRoute.muralImageUrl}
                   alt="A mural on the side of the Empire Board Games building in Albuquerque, New Mexico that depicts abstract flowers and rockets."/>
                   <Carousel.Caption>
@@ -77,6 +86,20 @@ export const RoutePage = ({match}) => {
           </Row>
         </Container>
       </section>
+      {/*<Map*/}
+      {/*  style="mapbox://styles/mapbox/streets-v9"*/}
+      {/*  containerStyle={{*/}
+      {/*    height: "85vh",*/}
+      {/*    width: "75vw"*/}
+      {/*  }}*/}
+      {/*  center={[-106.6, 35.09810]}*/}
+      {/*  zoom={[11.5]}*/}
+      {/*>*/}
+      {/*  {muralRoutes.map(mural => (*/}
+      {/*      <MapFeature mural={mural}/>*/}
+      {/*    )*/}
+      {/*  )};*/}
+      {/*</Map>*/}
     </>
   )
 };
