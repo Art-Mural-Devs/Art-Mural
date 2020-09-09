@@ -28,7 +28,7 @@ export const MuralCard = ({ mural }) => {
     <Col lg={true} style={{marginBottom: '2rem', alignItems: 'center'}}>
       <Card style={{ width:'18rem' }}>
         <Card.Img variant="top" src= { mural.muralImageUrl} alt={mural.muralTitle} fluid/>
-        <Card.Header className="text-center"><Button onClick={clickLike} style={{background:"#17a2b8"}}>Like</Button></Card.Header>
+        <Card.Header className="text-center"><Button onClick={clickLike} className="button-like">Like</Button>{mural.mostLiked}</Card.Header>
         <Card.Body className="card-mural">
           <Card.Title>{ mural.muralTitle}</Card.Title>
           <Card.Text>

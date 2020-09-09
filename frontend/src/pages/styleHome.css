@@ -188,6 +188,10 @@
     height: 15vw;
     object-fit: cover;
 }
+.button-like {
+    background: #17a2b8;
+    margin-right: 1rem;
+}
 
 .card-mural {
     height: 15vw;

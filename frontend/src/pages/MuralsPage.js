@@ -23,6 +23,7 @@ export const MuralsPage = () => {
 
   const effects = () => {
     dispatch(fetchAllMurals());
+    dispatch(fetchMuralByMostLiked());
   };
 
   const inputs = [];
@@ -37,16 +38,20 @@ export const MuralsPage = () => {
       <Container style={{marginBottom: '3rem'}}>
         <h4>Sort By:</h4>
         <Row style={{flexDirection: 'row', alignItems: 'center', justifyContent: 'space-around'}}>
-          <Button size="lg" onClick={() => {dispatch(fetchMuralByMostLiked())}} style={{background:"#17a2b8"}}>Most Liked</Button>{' '}
-          <Button size="lg" onClick={() => {dispatch(fetchMuralByTitle())}} style={{background:"#17a2b8"}}>Mural Name (A-Z)</Button>{' '}
-          <Button size="lg" onClick={() => {dispatch(fetchMuralByYear())}} style={{background:"#17a2b8"}}>Year (newest)</Button>{' '}
-          <Button size="lg" onClick={() => {dispatch(fetchMuralByArtist())}} style={{background:"#17a2b8"}}>Artist (A-Z)</Button>{' '}
+          <Button size="lg" onClick={() => {dispatch(fetchMuralByMostLiked())}} style={{background: "#17a2b8"}}>Most
+            Liked</Button>{' '}
+          <Button size="lg" onClick={() => {dispatch(fetchMuralByTitle())}} style={{background: "#17a2b8"}}>Mural Name
+            (A-Z)</Button>{' '}
+          <Button size="lg" onClick={() => {dispatch(fetchMuralByYear())}} style={{background: "#17a2b8"}}>Year
+            (newest)</Button>{' '}
+          <Button size="lg" onClick={() => {dispatch(fetchMuralByArtist())}} style={{background: "#17a2b8"}}>Artist
+            (A-Z)</Button>{' '}
         </Row>
       </Container>
-      <Container className="card-columns">
-
+      <Container>
+        <Row className="justify-content-center">
           {murals.map(mural => <MuralCard mural={mural} key={mural.muralId}/>)}
-
+        </Row>
       </Container>
     </>
   )
