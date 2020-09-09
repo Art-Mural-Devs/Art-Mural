@@ -12,8 +12,7 @@ import {selectMuralsByMuralRouteRouteId} from "../../utils/muralRoute/getMuralsB
 // Interfaces (represent the DB model and types of the columns associated with a specific DB table)
 export async function getAllMuralsController(request: Request, response: Response) {
     try {
-        const {orderBy} = request.params
-        const data = await getAllMurals(orderBy)
+        const data = await getAllMurals()
         const status: Status = {status: 200, message: null, data};
         return response.json(status);
         } catch(error) {
@@ -33,21 +32,21 @@ export async function getMuralsByMuralRouteRouteIdController(request : Request, 
     const status: Status = {status: 200, message: null, data};
     return response.json(status);
 }
-//
-// export async function getMuralsOrderedByMuralArtistController(request : Request, response: Response){
-//     const data = await getMuralsOrderedByMuralArtist()
-//     const status: Status = {status: 200, message: null, data};
-//     return response.json(status);
-// }
-//
-// export async function getMuralsOrderedByCreationYearController(request : Request, response: Response) {
-//     const data = await getMuralsOrderedByCreationYear()
-//     const status: Status = {status: 200, message: null, data};
-//     return response.json(status);
-// }
-//
-// export async function getMuralsOrderedByMuralTitleController(request : Request, response: Response){
-//     const data = await getMuralsOrderedByMuralTitle()
-//     const status: Status = {status: 200, message: null, data};
-//     return response.json(status);
-// }
+
+export async function getMuralsOrderedByMuralArtistController(request : Request, response: Response){
+    const data = await getMuralsOrderedByMuralArtist()
+    const status: Status = {status: 200, message: null, data};
+    return response.json(status);
+}
+
+export async function getMuralsOrderedByCreationYearController(request : Request, response: Response) {
+    const data = await getMuralsOrderedByCreationYear()
+    const status: Status = {status: 200, message: null, data};
+    return response.json(status);
+}
+
+export async function getMuralsOrderedByMuralTitleController(request : Request, response: Response){
+    const data = await getMuralsOrderedByMuralTitle()
+    const status: Status = {status: 200, message: null, data};
+    return response.json(status);
+}
