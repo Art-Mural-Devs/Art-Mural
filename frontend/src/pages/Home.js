@@ -82,8 +82,8 @@ export const Home = () => {
           </Row>
         </Container>
         <Container className="map text-center">
-          <Row>
-            <Col>
+          <Row className="justify-content-center">
+            <Col md={8}>
               <Map
                 style="mapbox://styles/mapbox/streets-v9"
                 containerStyle={{
