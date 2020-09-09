@@ -41,7 +41,7 @@ export const Home = () => {
           <Container fluid>
             <Row>
               <Col className="quoteMain">
-                <p>The power of Street Art is that it goes to people`s daily life to be seen</p>
+                <p>"The power of Street Art is that it goes to people`s daily life to be seen"</p>
               </Col>
             </Row>
           </Container>
