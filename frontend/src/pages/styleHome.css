@@ -46,6 +46,9 @@
     margin-top: 2rem;
     padding-right: 3rem;
 }
+.main-buttons:hover a{
+    text-decoration: none;
+}
 
 /*****Section Map-Main ******/
 .mapMain-section {
@@ -55,9 +58,7 @@
 .mapMain-section h2 {
     margin: 0 0 4rem;
 }
-.map {
-    margin: 0 10rem 0;
-}
+
 .image-map {
     width: 100%;
     height: 20vw;
@@ -214,7 +215,7 @@
     }
 
     .map {
-        margin: 3rem 0 0 2.5rem;
+        margin: 1rem 0 0 5rem;
     }
 
     .text-mainPage p {
