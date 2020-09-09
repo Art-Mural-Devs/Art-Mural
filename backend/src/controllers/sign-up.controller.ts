@@ -8,29 +8,26 @@ import {insertProfile} from "../../utils/profile/insertProfile";
 
 const mailgun = require("mailgun-js")
 
-// Interfaces (represent the DB model and types of the columns associated with a specific DB table)
-
 
 export async function signupProfileController(request: Request, response: Response) {
     try {
 
-
         const {profileContent, profileEmail, profileName, profilePassword} = request.body;
         const profileHash = await setHash(profilePassword);
         const profileActivationToken = setActivationToken();
-        const basePath = `${request.protocol}://${request.get('host')}${request.originalUrl}activation/${profileActivationToken}`
+        const basePath = `${request.protocol}://${request.get('host')}${request.originalUrl}/activation/${profileActivationToken}`
         console.log(profileActivationToken)
 
         const message = `<h2>Welcome to ABQ Murals.</h2>
-<p>In order to start liking murals you must confirm your account </p>
+<p>In order to start liking murals you must confirm your account! </p>
 <p><a href="${basePath}">${basePath}</a></p>
 `
 
         const mailgunMessage = {
             from: `Mailgun Sandbox <postmaster@${process.env.MAILGUN_DOMAIN}>`,
             to: profileEmail,
-            subject: "One step closer to Sticky Head -- Account Activation",
-            text: 'Test email text',
+            subject: "Account Activation for Murals",
+            text: 'Please click here to activate to start your mural experience',
             html: message
         }
 
@@ -40,7 +37,7 @@ export async function signupProfileController(request: Request, response: Respon
             profileContent,
             profileEmail,
             profileHash,
-            profileName,
+            profileName
         };
 
         const result = await insertProfile(profile)

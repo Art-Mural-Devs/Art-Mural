@@ -1,4 +1,4 @@
-
+/********** Desktop size *************/
 /*****Navbar ******/
 .navbar-dark .navbar-nav .nav-link {
     font-size: 20px;
@@ -8,9 +8,11 @@
 .navbar-dark:hover .navbar-nav:hover .nav-link:hover {
     color: #535c68;
 }
+
 .navbar-toggler {
     background-color: #535c68;
 }
+
 .navbar-brand {
     font-size: 30px;
 }
@@ -26,13 +28,15 @@
     max-width: 100%;
 }
 
-.display-3{
+.display-3 {
     margin: 10rem 0 1rem;
 }
+
 .display-4 {
     color: #535c68;
     margin: 2rem;
 }
+
 .quoteMain {
     color: white;
     font-style: italic;
@@ -42,37 +46,110 @@
     margin-top: 2rem;
     padding-right: 3rem;
 }
+
+.main-buttons:hover a {
+    text-decoration: none;
+}
+
 /*****Section Map-Main ******/
-.mapMain-section{
+.mapMain-section {
     margin: 5rem 0 0;
 }
-#mapImage {
-    width: 95%;
-    text-align: center;
-    padding-left: 3rem ;
-    margin: 3rem 0;
+
+.mapMain-section h2 {
+    margin: 0 0 4rem;
 }
+
+.image-map {
+    width: 100%;
+    height: 20vw;
+    object-fit: cover;
+}
+
+.map-icon {
+    font-size: 2.5rem;
+    color: #17A2B8;
+}
+
+@keyframes bounce {
+    0%, 100%, 20%, 50%, 80% {
+        -webkit-transform: translateY(0);
+        -ms-transform: translateY(0);
+        transform: translateY(0)
+    }
+    40% {
+        -webkit-transform: translateY(-30px);
+        -ms-transform: translateY(-30px);
+        transform: translateY(-30px)
+    }
+    60% {
+        -webkit-transform: translateY(-15px);
+        -ms-transform: translateY(-15px);
+        transform: translateY(-15px)
+    }
+}
+
+.map-icon {
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    -webkit-animation-iteration-count: infinite;
+}
+
+.map-icon:hover {
+    cursor: pointer;
+    animation-name: bounce;
+    -moz-animation-name: bounce;
+}
+
+
 /*****Section text-Main ******/
 .text-mainPage {
     margin-top: 10rem;
 }
-.text-mainPage p{
+
+.text-mainPage p {
     padding: 3rem 0;
     font-size: 25px;
-    text-align: justify ;
+    text-align: justify;
 }
+
 /*****Section images-Main ******/
 .image-random {
-    margin: 15rem 0;
+    margin: 5rem 0 10rem;
 }
-.image-random img{
-    width: 95%;
+
+.image-random h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.image-random p {
+    text-align: center;
+    font-size: 18px;
+    margin-top: 2rem;
+}
+
+.image-random img {
+    width: 94%;
     transition: transform 0.5s;
     border: 1px solid #535c68;
+    height: 15vw;
+    object-fit: cover;
 }
+
 .image-random img:hover {
     transform: scale(1.2);
 }
+
+.btn-image:hover {
+    color: white;
+}
+
 /*****Footer ******/
 .footer-fluid {
     background-color: #535c68;
@@ -80,19 +157,27 @@
     font-size: 1.6rem;
     color: white;
 }
+
 .Footer-Note {
     text-align: center;
     font-size: 20px;
     color: white;
     padding: 0.5rem 0 0;
 }
+
+.Footer-Note a {
+    color: #17A2B8;
+}
+
 #linkedInIcon {
     margin-left: 1rem;
     color: #17A2B8;
 }
+
 .name {
     color: white;
 }
+
 .name:hover {
     color: #17A2B8;
 }
@@ -103,24 +188,108 @@
     height: 15vw;
     object-fit: cover;
 }
+.button-like {
+    background: #17a2b8;
+    margin-right: 1rem;
+}
 
-@media only screen and (max-width: 767px) {
-    .titleMainPage .display-3{
-        font-size: 240%;
-        margin: 0;
+.card-mural {
+    height: 15vw;
+}
+
+.routeImage{
+    width: 100%;
+    height: 65vw;
+
+}
+
+.mainCardText{
+    height: 3vw;
+    text-align: center;
+}
+
+.carouselImage{
+    height: 40vw;
+}
+
+
+/********** Ipad size *************/
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+    .navbar-dark .navbar-nav .nav-link {
+        font-size: 20px;
+        color: white;
     }
-    .mapMain-section .display-4 {
-        font-size: 2.5rem;
-        margin: 0;
-        padding: 0;
-    }
-    .mapMain-section #mapImage {
-        width: 95%;
-        text-align: center;
-        padding: 1rem 0 0 1rem;
-    }
-    .imageSection .image-random {
+
+    .titleMainPage .display-3 {
+        font-size: 320%;
         margin: 5rem 0;
     }
 
+    .quoteMain {
+        margin: 10rem 0 0 10rem;
+    }
+
+    .mapMain-section .display-4, .imageSection .display-4 {
+        font-size: 4rem;
+        text-align: center;
+        margin: 4rem 0;
+        padding: 0;
+    }
+
+    .map {
+        margin: 1rem 0 0 5rem;
+        width: 80%;
+    }
+
+    .text-mainPage p {
+        font-size: 22px;
+    }
+
+    .image-random img {
+        width: 95%;
+        height: 45vw;
+    }
+
+}
+
+/********** Mobile size *************/
+@media only screen and (max-width: 767px) {
+    .titleMainPage .display-3 {
+        font-size: 240%;
+        margin: 0;
+    }
+
+    .mapMain-section .display-4, .imageSection .display-4 {
+        font-size: 2rem;
+        text-align: center;
+        margin: 2rem 0;
+        padding: 0;
+    }
+
+    .map {
+        margin-left: 2rem;
+        width: 80%;
+    }
+
+    .mapMain-section {
+        text-align: center;
+        margin: 2rem 0 0;
+    }
+
+    .text-mainPage {
+        margin-top: 5rem;
+    }
+
+    .text-mainPage p {
+        font-size: 18px;
+    }
+
+    .imageSection .image-random {
+        margin: 2rem 0;
+    }
+
+    .image-random img {
+        width: 95%;
+        height: 45vw;
+    }
 }

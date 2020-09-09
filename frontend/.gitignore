@@ -21,3 +21,6 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+*/setupProxy.js
+/setupProxy.js
+src/setupProxy.js

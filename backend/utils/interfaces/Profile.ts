@@ -6,3 +6,10 @@ export interface Profile {
     profileHash: string,
     profileName: string,
 }
+
+export interface PartialProfile {
+    profileId : string|null,
+    profileContent: string,
+    profileEmail: string,
+    profileName: string,
+}

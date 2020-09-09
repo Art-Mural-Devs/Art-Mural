@@ -2,3 +2,5 @@
 /.idea
 abqmural.env
 **/node_modules
+/frontend/src/setupProxy.js
+

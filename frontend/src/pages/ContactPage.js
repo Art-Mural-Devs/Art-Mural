@@ -57,12 +57,11 @@ class ContactPage extends React.Component {
               </div>
               <div className="col-12 col-sm-8">
                 <div className="form-group mb-0">
-                  <textarea onChange={this.handleChange} name="message" className="form-control" id="message" rows="3"></textarea>
+                  <textarea onChange={this.handleChange} name="message" className="form-control" id="message" rows="3"/>
                 </div>
               </div>
             </div>
             <div className="row d-flex align-items-center mt-3 mb-5">
-              <div className="col-12 col-sm-4"></div>
               <div className="col-12 col-sm-8">
                 <div className="form-group mb-0">
                   <button type="button" className="btn btn-light border" onClick={this.handleSend}>Send</button>
