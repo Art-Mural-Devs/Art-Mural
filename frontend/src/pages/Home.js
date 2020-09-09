@@ -83,7 +83,7 @@ export const Home = () => {
         </Container>
         <Container className="map text-center">
           <Row className="justify-content-center">
-            <Col md={12}>
+            <Col md={12}>n
               <Map
                 style="mapbox://styles/mapbox/streets-v9"
                 containerStyle={{
