@@ -5,8 +5,15 @@ import Row from 'react-bootstrap/Row'
 // import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button'
 import { useDispatch, useSelector } from 'react-redux'
-import { fetchAllMurals } from '../store/murals'
+import {
+  fetchAllMurals,
+  fetchMuralByArtist,
+  fetchMuralByMostLiked,
+  fetchMuralByTitle,
+  fetchMuralByYear
+} from '../store/murals'
 import { MuralCard } from '../ui/murals/MuralCard'
+// import { getMuralsOrderedByMuralTitleController } from '../../../backend/src/controllers/mural.controller'
 
 export const MuralsPage = () => {
 
@@ -30,10 +37,10 @@ export const MuralsPage = () => {
       <Container style={{marginBottom: '3rem'}}>
         <h4>Sort By:</h4>
         <Row style={{flexDirection: 'row', alignItems: 'center', justifyContent: 'space-around'}}>
-          <Button size="lg" style={{background:"#17a2b8"}}>Most Liked</Button>{' '}
-          <Button size="lg" style={{background:"#17a2b8"}}>Mural Name (A-Z)</Button>{' '}
-          <Button size="lg" style={{background:"#17a2b8"}}>Year (newest)</Button>{' '}
-          <Button size="lg" style={{background:"#17a2b8"}}>Artist (A-Z)</Button>{' '}
+          <Button size="lg" onClick={() => {dispatch(fetchMuralByMostLiked())}} style={{background:"#17a2b8"}}>Most Liked</Button>{' '}
+          <Button size="lg" onClick={() => {dispatch(fetchMuralByTitle())}} style={{background:"#17a2b8"}}>Mural Name (A-Z)</Button>{' '}
+          <Button size="lg" onClick={() => {dispatch(fetchMuralByYear())}} style={{background:"#17a2b8"}}>Year (newest)</Button>{' '}
+          <Button size="lg" onClick={() => {dispatch(fetchMuralByArtist())}} style={{background:"#17a2b8"}}>Artist (A-Z)</Button>{' '}
         </Row>
       </Container>
       <Container className="card-columns">

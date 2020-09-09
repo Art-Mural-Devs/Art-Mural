@@ -26,10 +26,6 @@ export async function getMuralsOrderedByMostLikedController(request : Request, r
     return response.json(status);
 }
 
-export async function getMuralsOrderedByCreationYearController(request : Request, response: Response) {
-    const data = await getMuralsOrderedByCreationYear()
-}
-
 export async function getMuralsByMuralRouteRouteIdController(request : Request, response: Response){
     const {routeId} = request.params
     const data = await selectMuralsByMuralRouteRouteId(routeId)
@@ -37,15 +33,21 @@ export async function getMuralsByMuralRouteRouteIdController(request : Request, 
     const status: Status = {status: 200, message: null, data};
     return response.json(status);
 }
-
-export async function getMuralsOrderedByMuralArtistController(request : Request, response: Response){
-    const data = await getMuralsOrderedByMuralArtist()
-    const status: Status = {status: 200, message: null, data};
-    return response.json(status);
-}
-
-export async function getMuralsOrderedByMuralTitleController(request : Request, response: Response){
-    const data = await getMuralsOrderedByMuralTitle()
-    const status: Status = {status: 200, message: null, data};
-    return response.json(status);
-}
+//
+// export async function getMuralsOrderedByMuralArtistController(request : Request, response: Response){
+//     const data = await getMuralsOrderedByMuralArtist()
+//     const status: Status = {status: 200, message: null, data};
+//     return response.json(status);
+// }
+//
+// export async function getMuralsOrderedByCreationYearController(request : Request, response: Response) {
+//     const data = await getMuralsOrderedByCreationYear()
+//     const status: Status = {status: 200, message: null, data};
+//     return response.json(status);
+// }
+//
+// export async function getMuralsOrderedByMuralTitleController(request : Request, response: Response){
+//     const data = await getMuralsOrderedByMuralTitle()
+//     const status: Status = {status: 200, message: null, data};
+//     return response.json(status);
+// }

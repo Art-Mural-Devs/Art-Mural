@@ -6,7 +6,7 @@ import {
 } from "../controllers/route.controller";
 import {asyncValidatorController} from "../controllers/asyncValidatorController";
 import {check} from "express-validator";
-import {routeValidator} from "../Validators/route.validator";
+
 const { checkSchema } = require('express-validator');
 
 const router = Router();

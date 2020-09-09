@@ -66,9 +66,9 @@ export class App {
     private routes () {
         this.app.use('/apis',IndexRoutes);
         this.app.use('/apis/murals', MuralRoute);
-        this.app.use('/apis/murals/year', MuralRoute)
-        this.app.use('/apis/murals/artist', MuralRoute)
-        this.app.use('/apis/murals/title', MuralRoute)
+        // this.app.use('/apis/murals/year', MuralRoute)
+        // this.app.use('/apis/murals/artist', MuralRoute)
+        // this.app.use('/apis/murals/title', MuralRoute)
         this.app.use('/apis/sign-up', signupRoutes)
         this.app.use('/apis/sign-in', SignInRouter);
         this.app.use('/apis/sign-out', SignOutRoute);
