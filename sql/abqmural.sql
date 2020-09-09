@@ -73,7 +73,17 @@ CREATE TABLE muralRoute (
                         FOREIGN KEY(muralRouteRouteId) REFERENCES route(routeId),
                         PRIMARY KEY (muralRouteMuralId, muralRouteRouteId)
 );
-insert into muralRoute (muralRouteMuralId, muralRouteRouteId) values (UUID_TO_BIN('7d51743d-e7b6-11ea-ada3-0242ac150002'),UUID_TO_BIN('182dc467-5310-4683-baaa-ed3f14ec5d22'));
-insert into muralRoute (muralRouteMuralId, muralRouteRouteId) values (UUID_TO_BIN('7d53ab80-e7b6-11ea-ada3-0242ac150002'),UUID_TO_BIN('182dc467-5310-4683-baaa-ed3f14ec5d22'));
-insert into muralRoute (muralRouteMuralId, muralRouteRouteId) values (UUID_TO_BIN('7d53ab80-e7b6-11ea-ada3-0242ac150002'),UUID_TO_BIN('493ee371-0294-4dd0-9ed9-0bddc9949841'));
-insert into muralRoute (muralRouteMuralId, muralRouteRouteId) values (UUID_TO_BIN('7d54c09d-e7b6-11ea-ada3-0242ac150002'),UUID_TO_BIN('493ee371-0294-4dd0-9ed9-0bddc9949841'));
+/*Nob Hil */
+insert into muralRoute (muralRouteMuralId, muralRouteRouteId) values (UUID_TO_BIN('0a1aa7f6-e6eb-11ea-a7af-0242ac150002'),UUID_TO_BIN('182dc467-5310-4683-baaa-ed3f14ec5d22'));
+insert into muralRoute (muralRouteMuralId, muralRouteRouteId) values (UUID_TO_BIN('0a1f7d85-e6eb-11ea-a7af-0242ac150002'),UUID_TO_BIN('182dc467-5310-4683-baaa-ed3f14ec5d22'));
+/*DownTown*/
+insert into muralRoute (muralRouteMuralId, muralRouteRouteId) values (UUID_TO_BIN('0a03c610-e6eb-11ea-a7af-0242ac150002'),UUID_TO_BIN('493ee371-0294-4dd0-9ed9-0bddc9949841'));
+insert into muralRoute (muralRouteMuralId, muralRouteRouteId) values (UUID_TO_BIN('0a29ee12-e6eb-11ea-a7af-0242ac150002'),UUID_TO_BIN('493ee371-0294-4dd0-9ed9-0bddc9949841'));
+insert into muralRoute (muralRouteMuralId, muralRouteRouteId) values (UUID_TO_BIN('0a228dcd-e6eb-11ea-a7af-0242ac150002'),UUID_TO_BIN('493ee371-0294-4dd0-9ed9-0bddc9949841'));
+
+/*huning */
+insert into muralRoute (muralRouteMuralId, muralRouteRouteId) values (UUID_TO_BIN('0a1c9e12-e6eb-11ea-a7af-0242ac150002'),UUID_TO_BIN('9e40f0c9-97e0-4060-8ff3-2095fa77c7f9'));
+
+/* Raynolds Addition */
+insert into muralRoute (muralRouteMuralId, muralRouteRouteId) values (UUID_TO_BIN('0a06ee3d-e6eb-11ea-a7af-0242ac150002'),UUID_TO_BIN('f744283d-626f-4c20-998b-7dfab5374b32'));
+insert into muralRoute (muralRouteMuralId, muralRouteRouteId) values (UUID_TO_BIN('0a0af3a2-e6eb-11ea-a7af-0242ac150002'),UUID_TO_BIN('f744283d-626f-4c20-998b-7dfab5374b32'));
