@@ -3,7 +3,7 @@ import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import { useDispatch, useSelector } from 'react-redux'
 import { fetchAllRoutes } from '../store/route'
-import { RouteMainCard } from '../shared/components/routeMainCard'
+import { RouteMainCard } from '../ui/routeMainCard'
 
 
 

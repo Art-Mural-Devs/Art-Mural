@@ -2,7 +2,7 @@ import React from 'react';
 import {Formik} from "formik";
 import {UpdateProfileContent} from "./UpdateProfileContent";
 import './updateForm.css'
-import {httpConfig} from "../utils/httpConfig";
+import {httpConfig} from "../../../utils/httpConfig";
 import * as Yup from "yup";
 
 export const UpdateProfileForm = ({profile}) => {

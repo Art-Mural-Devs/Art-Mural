@@ -1,10 +1,10 @@
 import React from 'react';
-import {httpConfig} from "../utils/httpConfig";
+import {httpConfig} from "../../../utils/httpConfig";
 import {Formik} from "formik";
 import * as Yup from "yup";
 import {SignInFormContent} from "./SignInFormContent";
 import {useDispatch} from "react-redux";
-import {fetchAuth} from "../store/auth.js";
+import {fetchAuth} from "../../../store/auth.js";
 
 
 

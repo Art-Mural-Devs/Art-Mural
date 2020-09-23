@@ -1,8 +1,8 @@
 import React, {useEffect}  from "react"
-import './style.css'
+import '../shared/components/account/style.css'
 import {useSelector, useDispatch} from "react-redux";
 import {fetchProfileByProfileId} from "../store/profile";
-import {UpdateProfileForm} from "./UpdateProfileForm";
+import {UpdateProfileForm} from "../shared/components/account/UpdateProfileForm";
 export const ProfileDetails = ()=> {
 
   const dispatch = useDispatch();
@@ -24,7 +24,7 @@ export const ProfileDetails = ()=> {
         return (
             <>
                 {profile ?
-                    <div className='container'>
+                    <div className='box container'>
                         <div className='yours'>
                             <h2>Your Profile</h2>
 
@@ -39,12 +39,6 @@ export const ProfileDetails = ()=> {
                                 <h3>Email: </h3>
                                 <p>{profile.profileEmail}</p>
                             </div>
-
-                            {/*<div className='box likes'>*/}
-                            {/*    <h3>Likes</h3>*/}
-                            {/*    <p>jogging</p>*/}
-                            {/*    <p>eating</p>*/}
-                            {/*</div>*/}
                         </div>
 
                         <div className='box aboutMe'>

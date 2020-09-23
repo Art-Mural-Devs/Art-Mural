@@ -1,6 +1,6 @@
 import React from "react"
-import {SignUpForm} from "./SignupForm";
-import {SignInForm} from "./SignInForm";
+import {SignUpForm} from "../shared/components/account/SignupForm";
+import {SignInForm} from "../shared/components/account/SignInForm";
 
 
 
