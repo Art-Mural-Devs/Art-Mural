@@ -1,16 +1,21 @@
-import React, {useEffect}  from "react"
+import React, { useEffect } from "react"
 import './style.css'
-import {useSelector, useDispatch} from "react-redux";
-import {fetchProfileByProfileId} from "../store/profile";
-import {UpdateProfileForm} from "./UpdateProfileForm";
-export const ProfileDetails = ()=> {
+import { useSelector, useDispatch } from "react-redux";
+import { fetchProfileByProfileId } from "../store/profile";
+import { UpdateProfileForm } from "./UpdateProfileForm";
+import Col from 'react-bootstrap/Col'
+import Row from 'react-bootstrap/Row'
+import Container from 'react-bootstrap/Container'
+import { Link } from 'react-router-dom'
+
+export const ProfileDetails = () => {
 
   const dispatch = useDispatch();
 
-    const effects = () => {
+  const effects = () => {
 
-       dispatch(fetchProfileByProfileId ( ))
-    };
+    dispatch(fetchProfileByProfileId())
+  };
 
   const inputs = [];
 
@@ -19,45 +24,50 @@ export const ProfileDetails = ()=> {
   const profile = useSelector(state => {
 
     return state.profile ? state.profile : null
-    });
+  });
 
-        return (
-            <>
-                {profile ?
-                    <div className='container'>
-                        <div className='yours'>
-                            <h2>Your Profile</h2>
-
-                        </div>
-                        <div className='box username'>
-                            <h3>Username</h3>
-                            <p>{profile.profileName}</p>
-                        </div>
-
-                        <div className='box details'>
-                            <div className='email'>
-                                <h3>Email: </h3>
-                                <p>{profile.profileEmail}</p>
-                            </div>
-
-                            {/*<div className='box likes'>*/}
-                            {/*    <h3>Likes</h3>*/}
-                            {/*    <p>jogging</p>*/}
-                            {/*    <p>eating</p>*/}
-                            {/*</div>*/}
-                        </div>
-
-                        <div className='box aboutMe'>
-                            <p>{profile.profileContent}</p>
-                        </div>
-
-                    <div className="row">
-                        {profile && <UpdateProfileForm key={profile.profileId} profile = {profile}/>}
-                    </div>
-                    </div>
-                : <h3>Please Log In </h3>}
-                </>
-        )
-
+  return (
+    <>
+      <Container>
+        <Row>
+          <Col>
+            <div className='yours'>
+              <h2>Your Profile</h2>
+            </div>
+          </Col>
+        </Row>
+      </Container>
+      <Row>
+        <Col md={4}>
+          <div className='box username'>
+            <h3>Username</h3>
+            {profile && (<p>{profile.profileName}</p>)}
+          </div>
+        </Col>
+        <Col md={4}>
+          <div className='box details'>
+            <div className='email'>
+              <h3>Email: </h3>
+              {profile && (<p>{profile.profileEmail}</p>)}
+            </div>
+          </div>
+        </Col>
+        <Col md={4}>
+          <div className='box aboutMe'>
+            <h3>Profile Content: </h3>
+            {profile && (<p>{profile.profileContent}</p>)}
+          </div>
+        </Col>
+      </Row>
+      <Container >
+        <Row md={1}>
+          <h2 className="text-center my-3 ">UPDATE PROFILE</h2>
+        </Row>
+        <Row md={2} >
+          {profile && <UpdateProfileForm key={profile.profileId} profile={profile}/>}
+        </Row>
+      </Container>
+    </>
+  )
 
 }

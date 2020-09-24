@@ -34,13 +34,13 @@ export const MuralsPage = () => {
       <Container style={{marginBottom: '3rem'}}>
         <h4>Sort By:</h4>
         <Row style={{flexDirection: 'row', alignItems: 'center', justifyContent: 'space-around'}}>
-          <Button size="lg" onClick={() => {dispatch(fetchMuralByMostLiked())}} style={{background: "#17a2b8"}}>Most
+          <Button size="lg" onClick={() => {dispatch(fetchMuralByMostLiked())}} variant="info">Most
             Liked</Button>{' '}
-          <Button size="lg" onClick={() => {dispatch(fetchMuralByTitle())}} style={{background: "#17a2b8"}}>Mural Name
+          <Button size="lg" onClick={() => {dispatch(fetchMuralByTitle())}} variant="info">Mural Name
             (A-Z)</Button>{' '}
-          <Button size="lg" onClick={() => {dispatch(fetchMuralByYear())}} style={{background: "#17a2b8"}}>Year
+          <Button size="lg" onClick={() => {dispatch(fetchMuralByYear())}} variant="info">Year
             (newest)</Button>{' '}
-          <Button size="lg" onClick={() => {dispatch(fetchMuralByArtist())}} style={{background: "#17a2b8"}}>Artist
+          <Button size="lg" onClick={() => {dispatch(fetchMuralByArtist())}} variant="info">Artist
             (A-Z)</Button>{' '}
         </Row>
       </Container>

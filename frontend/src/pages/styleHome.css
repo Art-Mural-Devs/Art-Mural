@@ -192,9 +192,12 @@
     background: #17a2b8;
     margin-right: 1rem;
 }
-
 .card-mural {
-    height: 20vw;
+    border: 1px solid black;
+}
+.card-mural-body {
+    height: 15vw;
+
 }
 
 .routeImage{

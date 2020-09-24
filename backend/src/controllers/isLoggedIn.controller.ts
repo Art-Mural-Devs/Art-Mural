@@ -7,7 +7,7 @@ import {Profile} from "../../utils/interfaces/Profile";
 
 export function isLoggedIn(request: Request, response: Response, next: NextFunction): any {
 
-    let status : Status = {status: 400, message: "Please login", data: null};
+    let status : Status = {status: 400, message: "Please Log In", data: null};
 
     const sessionProfile  = (request : Request): Profile | undefined => request.session?.profile ?? undefined;
 

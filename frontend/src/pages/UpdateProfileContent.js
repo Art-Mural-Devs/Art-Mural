@@ -15,7 +15,7 @@ export const UpdateProfileContent = (props) => {
     console.log(values)
     return (
         <>
-            <h2 className="text-center mb-5 mt-5">UPDATE PROFILE</h2>
+
             <form className='form' onSubmit={handleSubmit}> 
                 {/*controlId must match what is passed to the initialValues prop*/}
                 <div className="form-group update">

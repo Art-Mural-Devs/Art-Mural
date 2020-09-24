@@ -1,8 +1,20 @@
-import React from "react"
+import React, { useEffect } from "react"
 import Navbar from 'react-bootstrap/Navbar'
 import Nav from 'react-bootstrap/Nav'
+import { useDispatch, useSelector } from 'react-redux'
+import { fetchAuth } from '../../store/auth'
+import { SignOutComponent } from '../../pages/SignOut'
 
-export const Navigation = () => {
+export const Navigation = (props) => {
+  const {profile} = props
+  const auth = useSelector(state => state.auth);
+  const dispatch = useDispatch()
+  const effects = () => {
+    dispatch(fetchAuth());
+  };
+  const inputs = [];
+  useEffect(effects, inputs);
+
   return (
     <>
       <Navbar collapseOnSelect expand="md" bg="info" variant="dark">
@@ -13,9 +25,17 @@ export const Navigation = () => {
             <Nav.Link href="/">Home</Nav.Link>
             <Nav.Link href="/murals">Murals</Nav.Link>
             <Nav.Link href="/routesMainPage">Routes</Nav.Link>
-            <Nav.Link href="/contactPage">Contact</Nav.Link>
-            <Nav.Link href="/profileDetails">Profile</Nav.Link>
-            {localStorage.getItem('authUser') && localStorage.getItem('authUser').length> 0  ? <p style={{color:'white',paddingTop:'10px', paddingLeft:'10px'}} onClick={() =>{localStorage.setItem("authUser",'')}}>Log out</p> : <Nav.Link href="/logInPage">Log in</Nav.Link>}
+            {auth !== null && (
+              <>
+                <Nav.Link href="/profileDetails">Profile</Nav.Link>
+                <Nav.Link><SignOutComponent /></Nav.Link>
+              </>
+            )}
+            {auth === null && (
+              <>
+                <Nav.Link href="/LogInPage">Profile</Nav.Link>
+              </>
+            )}
           </Nav>
         </Navbar.Collapse>
       </Navbar>
