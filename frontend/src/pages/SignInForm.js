@@ -38,7 +38,7 @@ export const SignInForm = () => {
                     window.localStorage.setItem("authorization", reply.headers["authorization"]);
                     resetForm();
                     dispatch(fetchAuth())
-                    // window.location = "/";
+                    window.location = "/";
                 }
                 setStatus({message, type});
             });
