@@ -55,7 +55,7 @@ export async function signupProfileController(request: Request, response: Respon
 
             const status: Status = {
                 status: 200,
-                message: "Profile successfully created please check your email.",
+                message: "Profile successfully created please Log In.",
                 data: null
             };
             mg.messages().sendMime(compiledEmail, (sendError: any, body: any) => {
