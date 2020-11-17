@@ -12,8 +12,6 @@ import RouteRoute from './routes/route.routes';
 // Routes
 
 import signupRoutes from './routes/sign-up.route'
-// import Basicauth from './routes/basic-authentication'
-
 import { SignInRouter } from './routes/sign-in.route';
 import { passportMiddleware } from './lib/auth.controller';
 const session = require("express-session");
@@ -21,7 +19,7 @@ import passport = require('passport');
 const MemoryStore = require('memorystore')(session);
 import csrf from "csurf";
 import {ProfileRoute} from "./routes/profile.route";
-import helmet from "helmet/dist";
+//import helmet from "helmet/dist";
 
 
 export class App {
@@ -58,7 +56,7 @@ export class App {
         this.app.use(express.json());
         this.app.use(bodyParser.urlencoded({ extended: false, limit: '5mb' }));
         this.app.use(bodyParser.json());
-        this.app.use(helmet());
+       // this.app.use(helmet());
         this.app.use(session(sessionConfig));
         this.app.use(passport.initialize());
         this.app.use(passport.session());

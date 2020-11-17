@@ -11,7 +11,7 @@ const {validationResult} = require('express-validator');
 export async function toggleLikeController(request: Request, response: Response) {
 
     try {
-console.log(request)
+
         const {likeMuralId} = request.body;
         const profile: Profile = request.session?.profile
         const likeProfileId = <string>profile.profileId

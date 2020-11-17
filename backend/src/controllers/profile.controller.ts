@@ -12,17 +12,18 @@ export async function getProfileByProfileIdController(request : Request, respons
     const data = await selectProfileByProfileId(profileId)
     return response.json({status: 200, message: null, data})
 }
+
 export async function putProfileController(request: Request, response: Response) {
     try {
 
-        const {profileContent,profileEmail,profileName} = request.body;
+        const {profileContent, profileEmail, profileName} = request.body;
         const profileIdFromSession = <string>request.session?.profile.profileId
         const {profileId} = request.params
-        const performUpdate = async (partialProfile : PartialProfile) =>{
+        const performUpdate = async (partialProfile: PartialProfile) => {
             const previousProfile: Profile = await selectConfidentialProfileByProfileId(profileId)
-            console.log("previous profile",previousProfile)
-            const updatedProfile : Profile = {...previousProfile, ...partialProfile}
-            console.log("updatedProfile",updatedProfile)
+            console.log("previous profile", previousProfile)
+            const updatedProfile: Profile = {...previousProfile, ...partialProfile}
+            console.log("updatedProfile", updatedProfile)
             const result = await updateProfile(updatedProfile)
             const status: Status = {
                 status: 200,

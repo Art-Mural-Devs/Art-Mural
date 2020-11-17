@@ -27,7 +27,7 @@ export const Navigation = (props) => {
             <Nav.Link href="/routesMainPage">Routes</Nav.Link>
             {auth !== null && (
               <>
-                <Nav.Link href="/profileDetails">Profile</Nav.Link>
+                <Nav.Link href="/profileDetails">Sign In/Log In</Nav.Link>
                 <Nav.Link><SignOutComponent /></Nav.Link>
               </>
             )}
